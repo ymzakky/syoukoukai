@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>令和8年度 八王子まつり 出店希望募集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shopentry2026.css" />
+</head>
+<body>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <p class="hero-eyebrow">令和8年度 出店者募集</p>
+    <h1 class="hero-title">
+      八王子まつり<br>
+      出店希望申込のご案内
+      <span>2026年8月7日（金）〜 9日（日）開催</span>
+    </h1>
+    <p class="hero-sub">申込受付期間：2026年6月29日（月）〜 7月17日（金）<br>※ 応募状況により前後する場合があります</p>
+  </header>
+
+
+
+  <!-- ===== タブナビゲーション ===== -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn is-active" role="tab" aria-selected="true"
+            aria-controls="panel-apply" id="tab-apply"
+            onclick="switchTab('apply')">
+      📋 申請する方へ
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false"
+            aria-controls="panel-upload" id="tab-upload"
+            onclick="switchTab('upload')">
+      📁 書類をアップロードする方へ
+    </button>
+  </div>
+
+  <div id="panel-apply" class="tab-panel is-active">
+
+  <!-- ===== ご案内 + 事前確認バナー + 申請前チェックリスト ===== -->
+  <section class="section" id="yoken" style="padding-bottom: 0;">
+    <div class="container">
+      <h2 class="section-title">ご案内</h2>
+
+      <div style="
+        background:var(--c-surface);
+        border:1px solid var(--c-border);
+        border-radius:var(--radius-lg);
+        padding:24px 28px;
+        box-shadow:var(--shadow-card);
+        font-size:1rem;
+        line-height:1.95;
+        color:var(--c-text);
+        margin-bottom:20px;
+      ">
+        <p style="margin-bottom:12px;">本年も「八王子まつり」を 8月7日（金）〜9日（日）の3日間開催します。臨時出店は、関係機関との協議により <strong style="color:#c0392b;">民地（私有地）でのみ</strong> の取り扱いとなります（店先での道路使用許可申請は受け付けません）。</p>
+        <p>申請ご希望の方は、<strong style="color:#c0392b;">7月17日（金）まで</strong> に下部のWeb申請フォームよりお申し込みください。</p>
+      </div>
+
+      <div class="warn-box" style="margin-bottom:36px;">
+        <div class="warn-box__icon">📚</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title">お申し込み前に、以下の資料に必ず目を通してください</p>
+          <div class="warn-box__body">
+            <div class="doc-links">
+              <a class="doc-link" href="docs/annai.pdf" target="_blank" rel="noopener">
+                <span class="doc-link__icon">📄</span>臨時出店のご案内
+              </a>
+              <a class="doc-link" href="docs/handan.pdf" target="_blank" rel="noopener">
+                <span class="doc-link__icon">📄</span>臨時出店の判断の仕方
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== チェックリストへの切り替わり区切り ===== -->
+  <div style="
+    background: linear-gradient(135deg, #1a4731 0%, #2d6a4f 60%, #40916c 100%);
+    padding: 24px 20px;
+    text-align: center;
+  ">
+    <span style="
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-weight: var(--fw-bold);
+      font-size: 1.25rem;
+      letter-spacing: .08em;
+    ">✅ お申し込み前に、すべての項目をご確認ください</span>
+  </div>
+
+  <!-- ===== チェックリストセクション ===== -->
+  <section style="
+    background: linear-gradient(180deg, #d4edda 0%, #eaf6ec 100%);
+    border-top: 4px solid #40916c;
+    border-bottom: 4px solid #40916c;
+    padding: 40px 20px;
+  ">
+    <div class="container">
+
+      <h2 style="
+        font-size: 1.4rem;
+        font-weight: var(--fw-bold);
+        color: var(--c-green-dark);
+        border-left: 5px solid var(--c-green-mid);
+        padding-left: 14px;
+        margin-bottom: 16px;
+        letter-spacing: .04em;
+      ">申請前チェックリスト</h2>
+
+      <p style="font-weight:var(--fw-bold); color:#1a4731; font-size:1.1rem; margin-bottom:20px; line-height:1.7;">
+        八王子まつりの臨時出店は<strong style="color:#c0392b;">民地（私有地）のみ</strong>の取り扱いです。下記すべてに当てはまることをご確認のうえ、お申し込みください。
+      </p>
+
+      <ul class="checklist">
+        <li>
+          <span><strong>出店に使える民地（私有地）を確保している</strong>
+          <span class="note">道路使用許可は取得できません。甲州街道沿いの民地での出店も不可です。机やテントが公道上に出ないように設営してください。</span>
+          <div class="area-compare">
+            <div class="area-card area-card--ok">
+              <p class="area-card__head">⭕ 出店できます</p>
+              <img class="area-card__img" src="img/AreaOK.png" alt="民地（私有地）があり出店可能な例" loading="lazy">
+              <p class="area-card__cap">建物前に民地（私有地）があり、机・テントが道路上にはみ出ない場合</p>
+            </div>
+            <div class="area-card area-card--ng">
+              <p class="area-card__head">❌ 出店できません</p>
+              <img class="area-card__img" src="img/AreaNG.png" alt="民地がなく道路上に出てしまう出店不可の例" loading="lazy">
+              <p class="area-card__cap">民地がなく、机・テントが公道にはみ出てしまう場合（甲州街道沿いも不可）</p>
+            </div>
+          </div>
+          </span>
+        </li>
+        <li>
+          <span><strong>（他者所有地の場合）管理者と書面で利用許可を取り交わしている。</strong>
+          <span class="note">ビル・マンション・駐車場・公開空地など。消防法に抵触しない場合に限ります。</span>
+          <span class="doc-links">
+            <a class="doc-link" href="docs/riyoukyoka.pdf" target="_blank" rel="noopener">
+              <span class="doc-link__icon">📄</span>利用許可書テンプレート（PDF）
+            </a>
+          </span></span>
+        </li>
+        <li>
+          <span>
+            <strong>（調理行為をする場合）保健所の臨時出店に関する注意事項の内容を確認している</strong>
+            <figure style="margin: 12px 0 8px; width: 50%;">
+              <img src="img/BeerBBQ.png" alt="ビールサーバーから注ぐ・鉄板で加熱調理するイラスト" loading="lazy" style="width:100%; height:auto; border-radius:var(--radius-md); border:1px solid var(--c-border);">
+            </figure>
+          <span class="note">鉄板での加熱調理・ビールサーバー等から注ぐ・盛りつけ 等の調理行為を行う場合は、<strong style="color:#c0392b;">保健所への臨時出店届の提出が必要です。</strong>申請フォーム内で必要事項を入力いただきます。事前に下記資料をご一読ください。</span>
+          <span class="doc-links">
+            <a class="doc-link" href="docs/hokenjo.pdf" target="_blank" rel="noopener">
+              <span class="doc-link__icon">📄</span>保健所への申請に係る事前確認資料
+            </a>
+          </span>
+</span>
+        </li>
+        <li>
+          <span>
+            <strong>（見本陳列のテイクアウト販売をする場合）申請・食品表示に対応できる</strong>
+            <figure style="margin: 12px 0 8px; width: 50%;">
+              <img src="img/takeout.png" alt="テイクアウト用の紙袋のイラスト" loading="lazy" style="width:100%; height:auto; border-radius:var(--radius-md); border:1px solid var(--c-border);">
+            </figure>
+          <span class="note">店頭での見本品展示や事前製造品の袋詰め販売（テイクアウト）を行う場合、食品表示法に基づく原材料名・アレルギー情報等の表示対応が必要です。通常の飲食店営業許可の範囲内であれば、保健所への追加届出は不要です。</span></span>
+        </li>
+        <li>
+          <span><strong>八王子商工会議所の会員事業所である（または入会手続きに同意できる）</strong>
+          <span class="note">非会員の方は、出店の申請が許可された後にご入会のお手続きをお願いします。</span></span>
+        </li>
+      </ul>
+
+
+
+      <p style="font-size:1rem; color:var(--c-muted); margin-top:18px;">
+        ※ 申込は出店希望の受付です。審査結果により出店できない場合があります。
+      </p>
+      <p style="font-size:1rem; color:var(--c-muted); margin-top:6px;">
+        ※ 判断に迷う場合は、下部の「お問い合わせ」先までご連絡ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 申込の流れ ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">申込から出店までの流れ</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">1</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">このページ下部のボタンから申込フォームへ</p>
+            <p class="step__desc">必要事項を入力して送信してください。送信後、受付確認メールが届きます。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">2</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">指定の方法で各種写真・書類をアップロード</p>
+            <p class="step__desc">フォーム送信後に届く受付確認メールに、書類アップロード用のリンクが記載されています。そちらからアップロードしてください。</p>
+            <p style="margin-top:10px; font-size:1rem; color:var(--c-muted);">詳しい手順は上部の「📁 書類をアップロードする方へ」タブをご確認ください。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">3</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">審査・結果通知</p>
+            <p class="step__desc">書類確認後、申請期限（7月17日）から1週間を目処に、メールにて審査結果をお知らせします。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">4</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">出店費用のお支払い・準備</p>
+            <p class="step__desc">承認された方には出店料の請求書を発送します。期日までにお支払いください。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+
+      <!-- 申請≠許可 念押しボックス -->
+      <div class="warn-box" style="margin-bottom:32px; text-align:left;">
+        <div class="warn-box__icon">⚠️</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title" style="font-size:1.25rem; border-bottom:2px solid var(--c-warn-text); padding-bottom:8px; margin-bottom:10px;">申込は「出店希望の受付」であり、<wbr>出店許可ではありません</p>
+          <div class="warn-box__body">
+            <p>ご申込いただいた後、実行委員会による審査を行います。<strong>審査結果によっては、出店をご遠慮いただく場合があります。</strong>あらかじめご了承の上、お申し込みください。</p>
+            <ul style="margin-top:8px;">
+              <li>審査結果は申請期限（7月17日）から1週間を目処に、メールにてご連絡します</li>
+              <li>審査基準・定員等の詳細は事務局までお問い合わせください</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 事前準備書類リスト -->
+      <div style="
+        margin-bottom: 28px;
+        background: #fffde7;
+        border: 2px solid #f9a825;
+        border-left: 6px solid #e65100;
+        border-radius: 10px;
+        padding: 18px 20px;
+        text-align: left;
+      ">
+        <p style="
+          font-weight: var(--fw-bold);
+          color: #6d2700;
+          font-size: 1rem;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        ">📸 フォームを入力する前に、以下の写真・書類を手元にご準備ください</p>
+        <ul style="
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        ">
+          <li style="
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: baseline;
+            gap: 0 10px;
+            background: #ffffff;
+            border: 1px solid #f9a825;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            color: #4a3000;
+          ">
+            <span style="font-size: 1.1rem;">📷</span>
+            <span><strong>代表者の身分証明書類</strong>（免許証・マイナンバーカード等）</span>
+            <span style="
+              background: #e65100;
+              color: #fff;
+              font-size: .85rem;
+              font-weight: var(--fw-bold);
+              padding: 2px 8px;
+              border-radius: 999px;
+              white-space: nowrap;
+            ">写真またはPDF</span>
+          </li>
+          <li style="
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: baseline;
+            gap: 0 10px;
+            background: #ffffff;
+            border: 1px solid #f9a825;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            color: #4a3000;
+          ">
+            <span style="font-size: 1.1rem;">📷</span>
+            <span>
+              <strong>現場責任者の顔写真</strong>
+              <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">当日の身分確認・スタッフ証明に使用します</span>
+            </span>
+            <span style="
+              background: #e65100;
+              color: #fff;
+              font-size: .85rem;
+              font-weight: var(--fw-bold);
+              padding: 2px 8px;
+              border-radius: 999px;
+              white-space: nowrap;
+            ">写真</span>
+          </li>
+          <li style="
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: baseline;
+            gap: 0 10px;
+            background: #ffffff;
+            border: 1px solid #f9a825;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            color: #4a3000;
+          ">
+            <span style="font-size: 1.1rem;">📄</span>
+            <span><strong>直近の事業系ゴミの請求書または領収書</strong></span>
+            <span style="
+              background: #e65100;
+              color: #fff;
+              font-size: .85rem;
+              font-weight: var(--fw-bold);
+              padding: 2px 8px;
+              border-radius: 999px;
+              white-space: nowrap;
+            ">写真またはPDF</span>
+          </li>
+          <li style="
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: baseline;
+            gap: 0 10px;
+            background: #fff8e1;
+            border: 1px dashed #f9a825;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            color: #4a3000;
+          ">
+            <span style="font-size: 1.1rem;">📄</span>
+            <span><strong>【民地を借りる場合のみ】利用許可書</strong>
+              <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener" style="
+                display: inline-block;
+                margin-left: 8px;
+                font-size: .8rem;
+                font-weight: normal;
+                color: #795548;
+                text-decoration: underline;
+                white-space: nowrap;
+              ">テンプレートをダウンロード</a>
+            </span>
+            <span style="
+              background: #795548;
+              color: #fff;
+              font-size: .85rem;
+              font-weight: var(--fw-bold);
+              padding: 2px 8px;
+              border-radius: 999px;
+              white-space: nowrap;
+            ">写真またはPDF</span>
+          </li>
+        </ul>
+      </div>
+
+      <a href="https://business.form-mailer.jp/fms/7e54c7d0354341" class="cta-btn" target="_blank" rel="noopener" style="margin-top:8px; margin-bottom:8px; display:inline-flex; flex-direction:column; align-items:center; gap:4px; padding-top:18px; padding-bottom:14px;">
+        <span>申込フォームへ進む →</span>
+        <span style="font-size:.8rem; font-weight:var(--fw-normal); opacity:.8; letter-spacing:.02em;">フォーム入力には約5〜10分かかります</span>
+      </a>
+
+      <!-- アップロード案内 -->
+      <div class="warn-box" style="margin-top:20px; margin-bottom:8px; text-align:left;">
+        <div class="warn-box__icon">📬</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title" style="font-size:1rem;">フォーム送信後、書類のアップロードも忘れずに</p>
+          <div class="warn-box__body">
+            <p>送信完了後に届く受付確認メールに、書類アップロード用リンクが記載されています。申込締切日（7月17日）までにアップロードが完了しない場合、申込を無効とさせていただく場合があります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /#panel-apply -->
+
+  <div id="panel-upload" class="tab-panel">
+
+  <!-- ===== 身分証アップロード案内 ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">書類のアップロードについて</h2>
+
+      <!-- 書類リスト（先頭） -->
+      <div style="
+        background:var(--c-surface);
+        border:1px solid var(--c-border);
+        border-radius:var(--radius-md);
+        padding:20px 22px;
+        box-shadow:var(--shadow-card);
+        margin-bottom:20px;
+        font-size:1rem;
+      ">
+        <p style="font-weight:var(--fw-bold); color:var(--c-text); margin-bottom:10px;">アップロードが必要な書類（出店申請者〔代表者〕のもの）</p>
+        <p style="margin-bottom:8px; color:var(--c-muted);">① 本人確認書類（以下のいずれか1点）</p>
+        <div class="doc-cards" style="margin-bottom:10px;">
+
+          <!-- 運転免許証 -->
+          <div class="doc-card">
+            <div class="doc-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+                <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788" stroke-width="1.5"/>
+                <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35"/>
+                <circle cx="32" cy="30" r="10" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+                <circle cx="32" cy="30" r="3" fill="#2d6a4f"/>
+                <line x1="32" y1="20" x2="32" y2="27" stroke="#2d6a4f" stroke-width="2"/>
+                <line x1="32" y1="33" x2="32" y2="40" stroke="#2d6a4f" stroke-width="2"/>
+                <line x1="22" y1="30" x2="29" y2="30" stroke="#2d6a4f" stroke-width="2"/>
+                <line x1="35" y1="30" x2="42" y2="30" stroke="#2d6a4f" stroke-width="2"/>
+              </svg>
+            </div>
+            <p class="doc-card__name">運転免許証</p>
+            <p class="doc-card__note">表面のみ</p>
+          </div>
+
+          <!-- 運転経歴証明書 -->
+          <div class="doc-card">
+            <div class="doc-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+                <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788" stroke-width="1.5"/>
+                <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35"/>
+                <path d="M32 18 L42 22 L42 30 Q42 38 32 42 Q22 38 22 30 L22 22 Z" fill="#40916c" opacity=".2" stroke="#2d6a4f" stroke-width="1.5"/>
+                <polyline points="26,30 30,35 38,24" fill="none" stroke="#2d6a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="doc-card__name">運転経歴証明書</p>
+            <p class="doc-card__note">表面のみ</p>
+          </div>
+
+          <!-- マイナンバーカード -->
+          <div class="doc-card">
+            <div class="doc-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+                <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788" stroke-width="1.5"/>
+                <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35"/>
+                <circle cx="20" cy="26" r="5" fill="#2d6a4f" opacity=".5"/>
+                <path d="M12 42 Q12 34 20 34 Q28 34 28 42" fill="#2d6a4f" opacity=".5"/>
+                <rect x="33" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6"/>
+                <rect x="41" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6"/>
+                <rect x="49" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6"/>
+                <rect x="33" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4"/>
+                <rect x="41" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4"/>
+                <rect x="49" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4"/>
+                <rect x="33" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3"/>
+                <rect x="41" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3"/>
+                <rect x="49" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3"/>
+              </svg>
+            </div>
+            <p class="doc-card__name">マイナンバーカード</p>
+            <p class="doc-card__note" style="font-weight:var(--fw-bold);">表面のみ</p>
+          </div>
+
+        </div>
+        <p style="color:var(--c-muted);">② <strong style="color:var(--c-text);">住所変更がある場合</strong>は、変更後の住所がわかる写し（各種証明書の裏面など）も添付してください。</p>
+        <p style="margin-top:8px; color:var(--c-muted);">③ <strong style="color:var(--c-text);">飲食出店の場合は、営業許可書のコピー（食品営業許可証）</strong>も添付してください。</p>
+        <p style="margin-top:10px; font-size:1rem; color:var(--c-muted);">※ ファイル形式：JPG・PNG・PDF。1ファイルあたり10MB以内。</p>
+      </div>
+
+      <div class="dropbox-box">
+        <div class="dropbox-box__header">
+          <!-- Dropbox ロゴ簡易SVG -->
+          <div class="dropbox-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="#ffffff">
+              <path d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="dropbox-box__title">クラウドストレージ（Dropbox）へのファイルアップロード</p>
+            <p class="dropbox-box__sub">フォーム送信後に専用リンクをお送りします</p>
+          </div>
+        </div>
+        <div class="dropbox-box__body">
+          <p>申込フォームの送信完了後、受付確認メールに<strong>画像アップロード用のリンク</strong>が記載されています。以下の手順でアップロードをお願いします。</p>
+          <ol>
+            <li>受付確認メールに記載のリンクをクリック</li>
+            <li>アップロード画面が開いたら「ファイルをアップロード」を選択</li>
+            <li>本人確認書類の画像または PDF を選択してアップロード</li>
+            <li>アップロード完了を確認して終了</li>
+          </ol>
+
+          <!-- Dropbox ファイルリクエスト画面モックアップ -->
+          <div aria-hidden="true" style="
+            margin-top:16px;
+            margin-bottom:4px;
+            pointer-events:none;
+            user-select:none;
+          ">
+            <div style="
+              background:#ffffff;
+              border:1px solid #d0d0d0;
+              border-radius:8px;
+              max-width:400px;
+              margin:0 auto;
+              padding:28px 24px 20px;
+              font-family:'BIZ UDPGothic',sans-serif;
+              box-shadow:0 1px 6px rgba(0,0,0,.10);
+              text-align:center;
+            ">
+              <p style="font-size:.95rem; font-weight:700; color:#1b1b1b; margin-bottom:6px;">八王子商工会議所 からのリクエストです</p>
+              <p style="font-size:.82rem; color:#0061ff; margin-bottom:20px;">出店写真</p>
+              <div style="
+                border:2px dashed #c0c0c0;
+                border-radius:6px;
+                padding:32px 16px;
+                background:#fafafa;
+                margin-bottom:20px;
+              ">
+                <div style="
+                  display:inline-block;
+                  background:#1b1b1b;
+                  color:#fff;
+                  font-size:.9rem;
+                  font-weight:700;
+                  padding:10px 28px;
+                  border-radius:4px;
+                  margin-bottom:10px;
+                ">ファイルを追加</div>
+                <p style="font-size:.82rem; color:#666; margin:0;">またはこちらにドラッグ</p>
+              </div>
+              <!-- Dropbox ロゴ -->
+              <div style="margin-bottom:14px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="#0061FF" style="display:inline-block; vertical-align:middle;">
+                  <path d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z"/>
+                </svg>
+              </div>
+              <p style="font-size:.75rem; color:#555; line-height:1.65; margin:0;">
+                ファイルは八王子商工会議所のDropboxに安全にアップロードされます。
+              </p>
+            </div>
+            <p style="text-align:center; font-size:1rem; color:var(--c-muted); margin-top:6px;">↑ 実際のクラウドストレージ画面イメージ（クリックできません）</p>
+          </div>
+
+          <div style="
+            margin-top:12px;
+            background:var(--c-green-pale);
+            border:1px solid var(--c-border);
+            border-radius:var(--radius-sm);
+            padding:12px 14px;
+            font-size:1rem;
+            line-height:1.75;
+            color:var(--c-muted);
+          ">
+            <strong style="color:var(--c-text);">【個人情報の利用目的について】</strong><br>
+            ご提出いただいた申込情報および身分証明書は、出店審査のほか、以下の目的で関係各所へ共有・提出する場合があります。目的外の利用は行いません。
+            <ul style="padding-left:18px; margin-top:6px;">
+              <li>保健所への臨時出店届（飲食出店の場合）</li>
+              <li>出店許可書の発行に係る手続き</li>
+              <li>祭り運営に必要なその他の関係機関への提出</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意喚起 -->
+      <div class="warn-box" style="margin-top:20px;">
+        <div class="warn-box__icon">⚠️</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title">書類アップロードが確認できない場合は審査が完了しません</p>
+          <div class="warn-box__body">
+            <p>申込締切日（7月17日（金））までにアップロードが完了しない場合、申込を無効とさせていただく場合があります。お早めの手続きをお願いいたします。</p>
+            <ul>
+              <li>アップロード後の取り消しはお電話にてご連絡ください</li>
+              <li>不鮮明な画像は再提出をお願いする場合があります</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /#panel-upload -->
+
+  <!-- ===== お問い合わせ ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">お問い合わせ</h2>
+      <div style="
+        background:var(--c-surface);
+        border:1px solid var(--c-border);
+        border-radius:var(--radius-md);
+        padding:22px 24px;
+        font-size:1rem;
+        color:var(--c-muted);
+        line-height:2;
+        box-shadow:var(--shadow-card);
+      ">
+        <p><strong style="color:var(--c-text);">八王子商工会議所</strong>（八王子まつり担当：宇津木・北島）</p>
+        <p>🏢 所在地：〒192-0062 八王子市大横町11-1</p>
+        <p>📞 電話：<a href="tel:0426236311" style="color:var(--c-accent);">042-623-6311</a>（受付 平日 9:00〜17:00）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2026 八王子まつり実行委員会　All Rights Reserved.</p>
+    <p style="margin-top:6px; color:rgba(255,255,255,.45); font-size:.85rem;">プライバシーポリシーは窓口にてご確認いただけます</p>
+  </footer>
+
+  <script>
+    function switchTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        var active = btn.id === 'tab-' + name;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('.tab-panel').forEach(function(panel) {
+        var active = (name === 'apply')
+          ? (panel.id === 'panel-apply')
+          : (panel.id === 'panel-upload');
+        panel.classList.toggle('is-active', active);
+      });
+      history.replaceState(null, '', '#' + name);
+    }
+
+    // アンカーが #upload のとき自動でアップロードタブを開く
+    (function() {
+      if (location.hash === '#upload') {
+        switchTab('upload');
+      }
+    })();
+  </script>
+</body>
+</html>
