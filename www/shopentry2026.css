@@ -607,18 +607,15 @@ details[open].faq-item summary::after { content: '－'; }
 
 /* ===== 書類準備リスト ===== */
 .doc-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 .doc-list-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: 0 10px;
+  display: block !important;
   background: #ffffff;
   border: 1px solid #f9a825;
   border-radius: 6px;
@@ -627,19 +624,20 @@ details[open].faq-item summary::after { content: '－'; }
   color: #4a3000;
 }
 .doc-list-badge {
-  display: block;
+  display: inline-block;
   background: #e65100;
   color: #fff;
   font-size: .8rem;
   font-weight: var(--fw-bold);
   padding: 1px 8px;
   border-radius: 999px;
-  margin-bottom: 4px;
-  width: fit-content;
+  margin-bottom: 5px;
+  vertical-align: middle;
 }
 .doc-list-title {
   display: block;
   font-weight: var(--fw-bold);
+  margin-bottom: 2px;
 }
 .doc-list-note {
   display: block;
