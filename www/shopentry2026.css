@@ -583,6 +583,15 @@ details[open].faq-item summary::after { content: '－'; }
   .warn-box { gap: 10px; padding: 16px; }
   .warn-box__icon { font-size: 1.2rem; }
   .faq-answer { padding: 0 14px 14px 16px; }
+  .checklist li {
+    grid-template-columns: 28px 1fr;
+    gap: 0 10px;
+    padding: 14px 14px;
+    font-size: 1rem;
+  }
+  .checklist li::before {
+    font-size: 1.25rem;
+  }
   .checklist li .thumb-fig {
     float: none;
     width: 72px;
@@ -594,6 +603,48 @@ details[open].faq-item summary::after { content: '－'; }
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
   .cta-btn { transition: none; }
+}
+
+/* ===== 書類準備リスト ===== */
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.doc-list-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0 10px;
+  background: #ffffff;
+  border: 1px solid #f9a825;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: #4a3000;
+}
+.doc-list-badge {
+  display: inline-block;
+  background: #e65100;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: var(--fw-bold);
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+.doc-list-title {
+  display: block;
+  font-weight: var(--fw-bold);
+}
+.doc-list-note {
+  display: block;
+  font-size: .9rem;
+  color: #795548;
+  margin-top: 2px;
 }
 
 /* ===== Tab UI ===== */

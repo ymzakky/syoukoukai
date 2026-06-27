@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>令和8年度 八王子まつり 出店希望募集</title>
+  <title>令和8年度 八王子まつり 出店申請ページ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
@@ -15,13 +15,9 @@
 
   <!-- ===== Hero ===== -->
   <header class="hero">
-    <p class="hero-eyebrow">令和8年度 出店者募集</p>
     <h1 class="hero-title">
-      八王子まつり<br>
-      出店希望申込のご案内
-      <span>2026年8月7日（金）〜 9日（日）開催</span>
+      八王子まつり出店申請ページ
     </h1>
-    <p class="hero-sub">申込受付期間：2026年6月29日（月）〜 7月17日（金）<br>※ 応募状況により前後する場合があります</p>
   </header>
 
 
@@ -58,7 +54,7 @@
       ">
           <p style="margin-bottom:12px;">本年も「八王子まつり」を 8月7日（金）〜9日（日）の3日間開催します。臨時出店は、関係機関との協議により <strong
               style="color:var(--c-red);">民地（私有地）でのみ</strong> の取り扱いとなります（店先での道路使用許可申請は受け付けません）。</p>
-          <p>申請ご希望の方は、<strong style="color:var(--c-red);">7月17日（金）まで</strong> に下部のWeb申請フォームよりお申し込みください。</p>
+          <p>申請ご希望の方は、<strong style="color:var(--c-red); font-size:1.2em;">7月17日（金）まで</strong> に下部のWeb申請フォームよりお申し込みください。</p>
         </div>
 
         <div class="warn-box" style="margin-bottom:36px;">
@@ -294,162 +290,52 @@
             align-items: center;
             gap: 8px;
           ">📸 フォームを入力する前に、以下の写真・書類を手元にご準備ください</p>
-          <ul style="
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-          ">
+          <ul class="doc-list">
             <!-- ① 身分証明書類 -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📷</span>
               <span>
-                <strong>代表者の身分証明書類</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点。原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong style="color:var(--c-red);">マイナンバーカードの裏面は提出しないでください。</strong></span>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">代表者の身分証明書類</strong>
+                <span class="doc-list-note">運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点。原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong style="color:var(--c-red);">マイナンバーカードの裏面は提出しないでください。</strong></span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
             <!-- ② 顔写真 -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📷</span>
               <span>
-                <strong>現場責任者の顔写真</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">当日の身分確認・スタッフ証明に使用します。正面・無帽・背景無地を推奨します。</span>
+                <span class="doc-list-badge">写真</span>
+                <strong class="doc-list-title">現場責任者の顔写真</strong>
+                <span class="doc-list-note">当日の身分確認・スタッフ証明に使用します。正面・無帽・背景無地を推奨します。</span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真</span>
             </li>
             <!-- ③ ゴミ請求書 -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📄</span>
               <span>
-                <strong>直近の事業系ゴミの請求書または領収書</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">商工会議所地区内で事業を営んでいることの確認のために必要です。</span>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">直近の事業系ゴミの請求書または領収書</strong>
+                <span class="doc-list-note">商工会議所地区内で事業を営んでいることの確認のために必要です。</span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
             <!-- ④ 利用許可書（条件付き） -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📄</span>
               <span>
-                <strong>【民地を借りる場合のみ】利用許可書</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">ビル・マンション・駐車場・公開空地など他者所有地を使用する場合に必要です。消防法に抵触しない場合に限ります。</span>
-                <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener" style="
-                  display: inline-block;
-                  margin-top: 4px;
-                  font-size: .8rem;
-                  font-weight: normal;
-                  color: #795548;
-                  text-decoration: underline;
-                  white-space: nowrap;
-                ">テンプレートをダウンロード</a>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">【民地を借りる場合のみ】利用許可書</strong>
+                <span class="doc-list-note">ビル・マンション・駐車場・公開空地など他者所有地を使用する場合に必要です。消防法に抵触しない場合に限ります。</span>
+                <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener" style="display:inline-block; margin-top:4px; font-size:.8rem; font-weight:normal; color:#795548; text-decoration:underline;">テンプレートをダウンロード</a>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
             <!-- ⑤ 営業許可書（飲食出店の場合のみ） -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📄</span>
               <span>
-                <strong>【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">飲食物を提供・販売する出店の場合に必要です。</span>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</strong>
+                <span class="doc-list-note">飲食物を提供・販売する出店の場合に必要です。</span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
           </ul>
           <p style="margin-top:14px; font-size:.9rem; color:var(--c-muted);">※ ファイル形式：JPG・PNG・PDF。1ファイルあたり10MB以内。</p>
@@ -556,41 +442,17 @@
             align-items: center;
             gap: 8px;
           ">📸 アップロードが必要な写真・書類</p>
-          <ul style="
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-          ">
+          <ul class="doc-list">
             <!-- ① 身分証明書類 -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
-              <span style="font-size:1.1rem;">📷</span>
-              <span>
-                <strong>代表者の身分証明書類</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">以下のいずれか1点。原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong style="color:var(--c-red);">マイナンバーカードの裏面は提出しないでください。</strong></span>
-              </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
+            <li class="doc-list-item" style="display:block;">
+              <div style="display:grid; grid-template-columns:auto 1fr; gap:0 10px; align-items:baseline;">
+                <span style="font-size:1.1rem;">📷</span>
+                <span>
+                  <span class="doc-list-badge">写真またはPDF</span>
+                  <strong class="doc-list-title">代表者の身分証明書類</strong>
+                  <span class="doc-list-note">以下のいずれか1点。原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong style="color:var(--c-red);">マイナンバーカードの裏面は提出しないでください。</strong></span>
+                </span>
+              </div>
               <div class="doc-cards" style="margin-top:10px; margin-bottom:2px;">
                 <div class="doc-card">
                   <div class="doc-card__icon">
@@ -644,125 +506,41 @@
               </div>
             </li>
             <!-- ② 顔写真 -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📷</span>
               <span>
-                <strong>現場責任者の顔写真</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">当日の身分確認・スタッフ証明に使用します。正面・無帽・背景無地を推奨します。</span>
+                <span class="doc-list-badge">写真</span>
+                <strong class="doc-list-title">現場責任者の顔写真</strong>
+                <span class="doc-list-note">当日の身分確認・スタッフ証明に使用します。正面・無帽・背景無地を推奨します。</span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真</span>
             </li>
             <!-- ③ ゴミ請求書 -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📄</span>
               <span>
-                <strong>直近の事業系ゴミの請求書または領収書</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">商工会議所地区内で事業を営んでいることの確認のために必要です。</span>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">直近の事業系ゴミの請求書または領収書</strong>
+                <span class="doc-list-note">商工会議所地区内で事業を営んでいることの確認のために必要です。</span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
             <!-- ④ 利用許可書（条件付き） -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📄</span>
               <span>
-                <strong>【民地を借りる場合のみ】利用許可書</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">ビル・マンション・駐車場・公開空地など他者所有地を使用する場合に必要です。消防法に抵触しない場合に限ります。</span>
-                <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener" style="
-                  display: inline-block;
-                  margin-top: 4px;
-                  font-size: .8rem;
-                  font-weight: normal;
-                  color: #795548;
-                  text-decoration: underline;
-                  white-space: nowrap;
-                ">テンプレートをダウンロード</a>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">【民地を借りる場合のみ】利用許可書</strong>
+                <span class="doc-list-note">ビル・マンション・駐車場・公開空地など他者所有地を使用する場合に必要です。消防法に抵触しない場合に限ります。</span>
+                <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener" style="display:inline-block; margin-top:4px; font-size:.8rem; font-weight:normal; color:#795548; text-decoration:underline;">テンプレートをダウンロード</a>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
             <!-- ⑤ 営業許可書（飲食出店の場合のみ） -->
-            <li style="
-              display: grid;
-              grid-template-columns: auto 1fr auto;
-              align-items: baseline;
-              gap: 0 10px;
-              background: #ffffff;
-              border: 1px solid #f9a825;
-              border-radius: 6px;
-              padding: 10px 14px;
-              font-size: 1rem;
-              color: #4a3000;
-            ">
+            <li class="doc-list-item">
               <span style="font-size:1.1rem;">📄</span>
               <span>
-                <strong>【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</strong>
-                <span style="display:block; font-size:.9rem; color:#795548; margin-top:2px;">飲食物を提供・販売する出店の場合に必要です。</span>
+                <span class="doc-list-badge">写真またはPDF</span>
+                <strong class="doc-list-title">【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</strong>
+                <span class="doc-list-note">飲食物を提供・販売する出店の場合に必要です。</span>
               </span>
-              <span style="
-                background: #e65100;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: var(--fw-bold);
-                padding: 2px 8px;
-                border-radius: 999px;
-                white-space: nowrap;
-              ">写真またはPDF</span>
             </li>
           </ul>
           <p style="margin-top:14px; font-size:.9rem; color:var(--c-muted);">※ ファイル形式：JPG・PNG・PDF。1ファイルあたり10MB以内。</p>
