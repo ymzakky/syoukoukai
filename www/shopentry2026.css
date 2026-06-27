@@ -17,8 +17,8 @@
   --c-red:       #c0392b;
 
   --ff-body:  'Noto Sans JP', 'BIZ UDPGothic', sans-serif;
-  --fw-normal: 400;
-  --fw-bold:   700;
+  --fw-normal: 600;
+  --fw-bold:   900;
 
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -41,6 +41,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
+mark { background-color: #ffe066; padding: 0 2px; }
 
 /* ===== Layout Util ===== */
 .container {
@@ -282,6 +283,20 @@ a { color: inherit; }
   transform: translateY(0);
   box-shadow: var(--shadow-btn);
 }
+.cta-btn--sub {
+  background: #fffde7;
+  color: var(--c-warn-text);
+  font-size: 1rem;
+  padding: 14px 56px;
+  box-shadow: none;
+  border: 1.5px solid var(--c-warn-bdr);
+  margin-top: 14px;
+}
+.cta-btn--sub:hover {
+  background: #fff8c4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(249,168,37,.25);
+}
 .cta-note {
   margin-top: 18px;
   font-size: 1rem;
@@ -299,19 +314,19 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--c-surface);
-  border: 1px solid var(--c-border);
+  background: #fff0f3;
+  border: 1.5px solid #f4a0b0;
   border-radius: 999px;
   padding: 8px 18px;
   font-size: 1rem;
   font-weight: var(--fw-bold);
-  color: var(--c-green-dark);
+  color: #c0354f;
   text-decoration: none;
   transition: background .15s, border-color .15s;
 }
 .doc-link:hover {
-  background: var(--c-green-pale);
-  border-color: var(--c-green-mid);
+  background: #ffe0e7;
+  border-color: #e07090;
 }
 .doc-link__icon { font-size: 1rem; }
 
@@ -415,23 +430,92 @@ a { color: inherit; }
   .area-compare { grid-template-columns: 1fr; }
 }
 
-/* ===== Dropbox Upload Guide ===== */
-.dropbox-box {
+/* ===== Upload Panel (panel-upload 共通) ===== */
+.upload-panel-lead {
+  font-size: 1rem;
+  color: var(--c-muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.upload-step {
+  margin-bottom: 24px;
   background: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
+  border: 1.5px solid var(--c-border);
+  border-left: 5px solid var(--c-green-mid);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
   box-shadow: var(--shadow-card);
 }
-.dropbox-box__header {
+.upload-step__heading {
+  font-weight: var(--fw-bold);
+  font-size: 1.05rem;
+  color: var(--c-green-dark);
+  margin: 0 0 14px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  line-height: 1.4;
+}
+.upload-step__heading-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--c-green-dark);
+  color: #fff;
+  border-radius: 50%;
+  font-size: .9rem;
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+}
+.upload-step__body {
+  font-size: 1rem;
+  color: var(--c-text);
+  line-height: 1.8;
+}
+.upload-step__body > p { margin-bottom: 10px; }
+.upload-step__body > p:last-child { margin-bottom: 0; }
+.upload-step__sub {
+  background: var(--c-green-pale);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: .95rem;
+  color: var(--c-text);
+  line-height: 1.85;
+  margin-top: 12px;
+}
+.upload-step__sub-title {
+  font-weight: var(--fw-bold);
+  color: var(--c-green-dark);
+  margin-bottom: 8px;
+}
+.upload-step__sub ol {
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+@media (max-width: 480px) {
+  .upload-step { padding: 16px 14px; }
+}
+
+/* ===== Dropbox サービスラベル（③ブロック内） ===== */
+.dropbox-service-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  background: #eef4ff;
+  border: 1px solid #c0d4f5;
+  border-radius: var(--radius-sm);
 }
 .dropbox-icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background: #0061FF;
   border-radius: var(--radius-sm);
   display: flex;
@@ -440,28 +524,235 @@ a { color: inherit; }
   flex-shrink: 0;
 }
 .dropbox-icon svg { display: block; }
-.dropbox-box__title {
-  font-weight: var(--fw-bold);
+.dropbox-service-label__text {
+  font-size: .88rem;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+/* アップロード手順リスト（番号バッジ付き） */
+.upload-steps {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 20px;
+  counter-reset: upload-step;
+}
+.upload-steps li {
+  counter-increment: upload-step;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0 12px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--c-border);
   font-size: 1rem;
   color: var(--c-text);
+  line-height: 1.7;
 }
-.dropbox-box__sub {
-  font-size: 1rem;
-  color: var(--c-muted);
+.upload-steps li:last-child { border-bottom: none; }
+.upload-steps li::before {
+  content: counter(upload-step);
+  width: 24px;
+  height: 24px;
+  background: #0061FF;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: var(--fw-bold);
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
-.dropbox-box__body {
-  font-size: 1rem;
+
+/* モックアップ共通 */
+.mock-frame {
+  margin: 16px auto 4px;
+  max-width: 420px;
+  pointer-events: none;
+  user-select: none;
+}
+.mock-screen {
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 24px 20px 18px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.10);
+  font-family: var(--ff-body);
+  text-align: center;
+}
+.mock-screen__title {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin-bottom: 4px;
+}
+.mock-screen__subtitle {
+  font-size: .82rem;
+  color: #0061ff;
+  margin-bottom: 14px;
+}
+.mock-dropzone {
+  border: 2px dashed #c0c0c0;
+  border-radius: 6px;
+  padding: 28px 16px;
+  background: #fafafa;
+  margin-bottom: 16px;
+}
+.mock-btn {
+  display: inline-block;
+  background: #1b1b1b;
+  color: #fff;
+  font-size: .88rem;
+  font-weight: 700;
+  padding: 9px 26px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.mock-dropzone__hint {
+  font-size: .8rem;
+  color: #666;
+  margin: 0;
+}
+.mock-footer { margin-top: 10px; }
+.mock-footer__text {
+  font-size: .72rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+.mock-caption {
+  text-align: center;
+  font-size: .88rem;
   color: var(--c-muted);
+  margin-top: 6px;
+  font-style: normal;
+  display: block;
+}
+
+/* モックアップ間の遷移ラベル */
+.mock-transition-label {
+  text-align: center;
+  font-size: .9rem;
+  font-weight: var(--fw-bold);
+  color: #0061ff;
+  margin: 16px 0 4px;
+}
+
+/* 名前・メール入力フォームモックアップ */
+.mock-screen--form {
+  text-align: left;
+}
+.mock-field-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.mock-field { flex: 1; }
+.mock-field__label {
+  font-size: .75rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+.mock-field__input {
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: .8rem;
+  color: #999;
+  background: #fff;
+}
+.mock-field__input--active {
+  border: 2px solid #0061ff;
+  color: #1b1b1b;
+  font-weight: 700;
+  font-size: .8rem;
+}
+.mock-submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 補足説明callout（名前・メール入力案内） */
+.callout-info {
+  background: #e8f4fd;
+  border: 1px solid #90caf9;
+  border-left: 4px solid #1976d2;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-top: 14px;
+  font-size: 1rem;
   line-height: 1.75;
+  color: var(--c-text);
+}
+.callout-info__note {
+  margin-top: 6px;
+  font-size: .9rem;
+  color: var(--c-muted);
+}
+
+/* アップロード完了後の案内 */
+.upload-complete-note {
+  margin-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid var(--c-border);
-  padding-top: 14px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--c-text);
 }
-.dropbox-box__body ol {
+.upload-complete-note__title {
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.upload-complete-note__title::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--c-green-dark);
+  color: #fff;
+  border-radius: 50%;
+  font-size: .8rem;
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+}
+.upload-complete-note p { margin-bottom: 6px; }
+.upload-complete-note ul {
   padding-left: 20px;
-  margin-top: 8px;
+  margin-top: 4px;
+  color: var(--c-muted);
 }
-.dropbox-box__body ol li { margin-bottom: 6px; }
-.dropbox-box__body strong { color: var(--c-text); }
+.upload-complete-note ul li { margin-bottom: 4px; }
+
+/* 個人情報利用目的ノート */
+.privacy-note {
+  margin-top: 16px;
+  background: var(--c-green-pale);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: .95rem;
+  line-height: 1.75;
+  color: var(--c-muted);
+}
+.privacy-note__title {
+  display: block;
+  color: var(--c-text);
+  font-weight: var(--fw-bold);
+  margin-bottom: 6px;
+}
+.privacy-note ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+.privacy-note ul li { margin-bottom: 4px; }
 
 /* ===== Doc Cards ===== */
 /* 書類リスト内でgrid列をまたいで全幅表示 */
@@ -578,6 +869,7 @@ details[open].faq-item summary::after { content: '－'; }
 @media (max-width: 480px) {
   .hero { padding: 44px 16px 36px; }
   .cta-btn { width: 100%; text-align: center; padding: 16px 24px; }
+  .cta-btn--sub { width: 100%; padding: 12px 24px; }
   .overview-grid { grid-template-columns: 1fr; }
   .container { padding: 0 16px; }
   .warn-box { gap: 10px; padding: 16px; }
