@@ -334,9 +334,9 @@
             <div class="warn-box__body">
               <p>送信完了後に届く受付確認メールに、書類アップロード用リンクが記載されています。申込締切日（7月17日）までにアップロードが完了しない場合、申込を無効とさせていただく場合があります。</p>
             </div>
-            <button class="cta-btn cta-btn--sub" onclick="switchTab('upload')">
+            <a class="cta-btn cta-btn--sub" href="shopentry2026.html#upload">
               <span>📁 書類をアップロード前にこちらをお読みください</span>
-            </button>
+            </a>
 
           </div>
         </div>
@@ -624,7 +624,7 @@
       history.replaceState(null, '', '#' + name);
       if (scroll !== false) {
         var tabBar = document.querySelector('.tab-bar');
-        var top = tabBar ? tabBar.getBoundingClientRect().top + window.scrollY : 0;
+        var top = tabBar ? tabBar.offsetTop : 0;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     }
@@ -633,6 +633,7 @@
     (function () {
       if (location.hash === '#upload') {
         switchTab('upload', false);
+        setTimeout(function () { window.scrollTo(0, 0); }, 0);
       }
     })();
   </script>
