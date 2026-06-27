@@ -617,7 +617,7 @@ details[open].faq-item summary::after { content: '－'; }
 .doc-list-item {
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: baseline;
+  align-items: start;
   gap: 0 10px;
   background: #ffffff;
   border: 1px solid #f9a825;
@@ -627,7 +627,7 @@ details[open].faq-item summary::after { content: '－'; }
   color: #4a3000;
 }
 .doc-list-badge {
-  display: inline-block;
+  display: block;
   background: #e65100;
   color: #fff;
   font-size: .8rem;
@@ -635,6 +635,7 @@ details[open].faq-item summary::after { content: '－'; }
   padding: 1px 8px;
   border-radius: 999px;
   margin-bottom: 4px;
+  width: fit-content;
 }
 .doc-list-title {
   display: block;
