@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>令和8年度 八王子まつり 出店希望募集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== Design Tokens ===== */
+    :root {
+      --c-bg:        #f5f9f4;
+      --c-surface:   #ffffff;
+      --c-green-dark:#2d6a4f;
+      --c-green-mid: #52b788;
+      --c-green-lite:#d8f3dc;
+      --c-green-pale:#eaf6ec;
+      --c-accent:    #40916c;
+      --c-text:      #1b3a2d;
+      --c-muted:     #5a7a68;
+      --c-border:    #b7dfc7;
+      --c-warn-bg:   #fff8e1;
+      --c-warn-bdr:  #f9a825;
+      --c-warn-text: #5a4000;
+
+      --ff-body:  'BIZ UDPGothic', 'Noto Sans CJK JP', 'IPAGothic', sans-serif;
+      --fw-normal: 400;
+      --fw-bold:   700;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --shadow-card: 0 2px 12px rgba(45,106,79,.10);
+      --shadow-btn:  0 4px 18px rgba(64,145,108,.35);
+    }
+
+    /* ===== Reset ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      font-weight: var(--fw-normal);
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.75;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    /* ===== Layout Util ===== */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== Header / Hero ===== */
+    .hero {
+      background: linear-gradient(160deg, var(--c-green-dark) 0%, var(--c-accent) 100%);
+      color: #fff;
+      padding: 56px 20px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* 和紙にじみ装飾 */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 80%, rgba(255,255,255,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 20%, rgba(255,255,255,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: .75rem;
+      letter-spacing: .18em;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.30);
+      border-radius: 999px;
+      padding: 4px 16px;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: var(--fw-bold);
+      line-height: 1.4;
+      letter-spacing: .04em;
+      margin-bottom: 12px;
+    }
+    .hero-title span {
+      display: block;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: var(--fw-normal);
+      opacity: .85;
+      margin-top: 6px;
+      letter-spacing: .08em;
+    }
+    .hero-sub {
+      font-size: .9rem;
+      opacity: .80;
+      margin-top: 8px;
+    }
+
+    /* ===== Section Base ===== */
+    .section {
+      padding: 48px 20px;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: var(--fw-bold);
+      color: var(--c-green-dark);
+      border-left: 4px solid var(--c-green-mid);
+      padding-left: 12px;
+      margin-bottom: 24px;
+      letter-spacing: .04em;
+    }
+
+    /* ===== Overview Cards ===== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .overview-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      box-shadow: var(--shadow-card);
+    }
+    .overview-card__label {
+      font-size: .72rem;
+      color: var(--c-muted);
+      letter-spacing: .1em;
+      margin-bottom: 6px;
+    }
+    .overview-card__value {
+      font-size: 1rem;
+      font-weight: var(--fw-bold);
+      color: var(--c-green-dark);
+      line-height: 1.45;
+    }
+
+    /* ===== Steps ===== */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 16px;
+      position: relative;
+    }
+    .step + .step .step__connector { display: block; }
+    .step__num-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .step__num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--c-green-dark);
+      color: #fff;
+      font-weight: var(--fw-bold);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .step__line {
+      width: 2px;
+      flex: 1;
+      background: var(--c-border);
+      min-height: 28px;
+    }
+    .step:last-child .step__line { display: none; }
+    .step__body {
+      padding: 6px 0 28px;
+    }
+    .step__title {
+      font-weight: var(--fw-bold);
+      color: var(--c-green-dark);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+    .step__desc {
+      font-size: .88rem;
+      color: var(--c-muted);
+      line-height: 1.65;
+    }
+    .step__badge {
+      display: inline-block;
+      background: var(--c-green-lite);
+      color: var(--c-green-dark);
+      border-radius: 4px;
+      font-size: .72rem;
+      font-weight: var(--fw-bold);
+      padding: 2px 8px;
+      margin-top: 6px;
+      letter-spacing: .06em;
+    }
+
+    /* ===== Warning Box ===== */
+    .warn-box {
+      background: var(--c-warn-bg);
+      border: 1.5px solid var(--c-warn-bdr);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .warn-box__icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .warn-box__content {}
+    .warn-box__title {
+      font-weight: var(--fw-bold);
+      color: var(--c-warn-text);
+      margin-bottom: 6px;
+      font-size: .95rem;
+    }
+    .warn-box__body {
+      font-size: .85rem;
+      color: var(--c-warn-text);
+      line-height: 1.7;
+    }
+    .warn-box__body ul {
+      padding-left: 18px;
+      margin-top: 6px;
+    }
+    .warn-box__body ul li { margin-bottom: 4px; }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      background: var(--c-green-pale);
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+      padding: 40px 20px 48px;
+      text-align: center;
+    }
+    .cta-section .section-title {
+      border: none;
+      padding: 0;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--c-green-dark);
+    }
+    .cta-section__sub {
+      font-size: .88rem;
+      color: var(--c-muted);
+      margin-bottom: 32px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--c-green-dark);
+      color: #fff;
+      font-family: var(--ff-body);
+      font-weight: var(--fw-bold);
+      font-size: 1.05rem;
+      letter-spacing: .06em;
+      padding: 16px 48px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-btn);
+      text-decoration: none;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .cta-btn:hover {
+      background: var(--c-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(64,145,108,.45);
+    }
+    .cta-btn:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-btn);
+    }
+    .cta-note {
+      margin-top: 18px;
+      font-size: .78rem;
+      color: var(--c-muted);
+    }
+
+    /* ===== Doc Download Links ===== */
+    .doc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .doc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: .84rem;
+      font-weight: var(--fw-bold);
+      color: var(--c-green-dark);
+      text-decoration: none;
+      transition: background .15s, border-color .15s;
+    }
+    .doc-link:hover {
+      background: var(--c-green-pale);
+      border-color: var(--c-green-mid);
+    }
+    .doc-link__icon { font-size: 1rem; }
+
+    /* ===== Checklist ===== */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .checklist li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 0 12px;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      font-size: .9rem;
+      line-height: 1.7;
+      box-shadow: var(--shadow-card);
+    }
+    .checklist li::before {
+      content: '☑';
+      color: var(--c-green-mid);
+      font-size: 1.1rem;
+      font-weight: var(--fw-bold);
+      line-height: 1.5;
+    }
+    .checklist li strong { color: var(--c-green-dark); }
+    .checklist li .note {
+      display: block;
+      font-size: .8rem;
+      color: var(--c-muted);
+      margin-top: 2px;
+    }
+    /* チェックリスト内の補足イメージ（小さく・控えめに） */
+    .checklist li .thumb-fig {
+      float: right;
+      width: 96px;
+      margin: 2px 0 8px 14px;
+      text-align: center;
+    }
+    .checklist li .thumb-fig img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-sm);
+      opacity: .92;
+    }
+    .checklist li .thumb-fig figcaption {
+      font-size: .68rem;
+      color: var(--c-muted);
+      margin-top: 3px;
+      letter-spacing: .04em;
+    }
+
+    /* ===== 民地⭕❌ 比較 ===== */
+    .area-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 20px;
+      align-items: stretch;
+    }
+    .area-card {
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    .area-card--ok { background: var(--c-green-pale); border: 1px solid var(--c-border); }
+    .area-card--ng { background: var(--c-warn-bg);   border: 1px solid var(--c-warn-bdr); }
+    .area-card__head {
+      font-weight: var(--fw-bold);
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .area-card--ok .area-card__head { color: var(--c-green-dark); }
+    .area-card--ng .area-card__head { color: var(--c-warn-text); }
+    .area-card__img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--c-border);
+      background: #fff;
+    }
+    .area-card__cap {
+      font-size: .84rem;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+    .area-card--ok .area-card__cap { color: var(--c-muted); }
+    .area-card--ng .area-card__cap { color: var(--c-warn-text); }
+    @media (max-width: 560px) {
+      .area-compare { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Dropbox Upload Guide ===== */
+    .dropbox-box {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .dropbox-box__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .dropbox-icon {
+      width: 40px;
+      height: 40px;
+      background: #0061FF;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .dropbox-icon svg { display: block; }
+    .dropbox-box__title {
+      font-weight: var(--fw-bold);
+      font-size: .98rem;
+      color: var(--c-text);
+    }
+    .dropbox-box__sub {
+      font-size: .78rem;
+      color: var(--c-muted);
+    }
+    .dropbox-box__body {
+      font-size: .86rem;
+      color: var(--c-muted);
+      line-height: 1.75;
+      border-top: 1px solid var(--c-border);
+      padding-top: 14px;
+    }
+    .dropbox-box__body ol {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .dropbox-box__body ol li { margin-bottom: 6px; }
+    .dropbox-box__body strong { color: var(--c-text); }
+
+    /* ===== Doc Cards ===== */
+    .doc-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+    .doc-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      padding: 16px 12px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+    .doc-card__icon {
+      width: 44px;
+      height: 34px;
+      margin: 0 auto 8px;
+    }
+    .doc-card__icon svg {
+      width: 44px;
+      height: 34px;
+    }
+    .doc-card__name {
+      font-size: 1.05rem;
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+      margin-bottom: 4px;
+    }
+    .doc-card__note {
+      font-size: .78rem;
+      color: var(--c-muted);
+    }
+    @media (max-width: 560px) {
+      .doc-cards { grid-template-columns: 1fr; }
+      .doc-card { display: flex; align-items: center; gap: 14px; text-align: left; padding: 12px 14px; }
+      .doc-card__icon { margin: 0; flex-shrink: 0; }
+    }
+
+    /* ===== FAQ Accordion ===== */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details.faq-item {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    details.faq-item summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px;
+      cursor: pointer;
+      font-weight: var(--fw-bold);
+      font-size: .9rem;
+      color: var(--c-green-dark);
+      list-style: none;
+      user-select: none;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::before {
+      content: 'Q';
+      width: 26px;
+      height: 26px;
+      background: var(--c-green-lite);
+      color: var(--c-green-dark);
+      border-radius: 4px;
+      font-weight: var(--fw-bold);
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    details.faq-item summary::after {
+      content: '＋';
+      margin-left: auto;
+      font-size: 1.1rem;
+      color: var(--c-muted);
+      transition: transform .2s;
+    }
+    details[open].faq-item summary::after { content: '－'; }
+    .faq-answer {
+      padding: 0 18px 16px 54px;
+      font-size: .86rem;
+      color: var(--c-muted);
+      line-height: 1.75;
+      border-top: 1px solid var(--c-green-lite);
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--c-green-dark);
+      color: rgba(255,255,255,.65);
+      text-align: center;
+      font-size: .75rem;
+      padding: 28px 20px;
+      letter-spacing: .06em;
+    }
+    .footer a { color: rgba(255,255,255,.75); text-decoration: underline; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 44px 16px 36px; }
+      .cta-btn { width: 100%; text-align: center; padding: 16px 24px; }
+      .overview-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 16px; }
+      .warn-box { gap: 10px; padding: 16px; }
+      .warn-box__icon { font-size: 1.2rem; }
+      .faq-answer { padding: 0 14px 14px 16px; }
+      .checklist li .thumb-fig {
+        float: none;
+        width: 72px;
+        margin: 0 auto 10px;
+        display: block;
+      }
+    }
+
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .cta-btn { transition: none; }
+    }
+
+    /* ===== Tab UI ===== */
+    .tab-bar {
+      display: flex;
+      background: var(--c-surface);
+      border-bottom: 2px solid var(--c-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(45,106,79,.08);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 16px 12px;
+      font-family: var(--ff-body);
+      font-size: .92rem;
+      font-weight: var(--fw-bold);
+      color: var(--c-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      letter-spacing: .04em;
+      transition: color .2s, border-color .2s;
+    }
+    .tab-btn.is-active {
+      color: var(--c-green-dark);
+      border-bottom-color: var(--c-green-dark);
+    }
+    .tab-btn:hover:not(.is-active) {
+      color: var(--c-accent);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.is-active { display: block; }
+    @media (max-width: 480px) {
+      .tab-btn { font-size: .75rem; padding: 12px 6px; line-height: 1.3; letter-spacing: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <p class="hero-eyebrow">令和8年度 出店者募集</p>
+    <h1 class="hero-title">
+      八王子まつり<br>
+      出店希望申込のご案内
+      <span>2026年8月7日（金）〜 9日（日）開催</span>
+    </h1>
+    <p class="hero-sub">申込受付期間：2026年6月29日（月）〜 7月17日（金）<br>※ 応募状況により前後する場合があります</p>
+  </header>
+
+
+
+  <!-- ===== タブナビゲーション ===== -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn is-active" role="tab" aria-selected="true"
+            aria-controls="panel-apply" id="tab-apply"
+            onclick="switchTab('apply')">
+      📋 申請する方へ
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false"
+            aria-controls="panel-upload" id="tab-upload"
+            onclick="switchTab('upload')">
+      📁 書類をアップロードする方へ
+    </button>
+  </div>
+
+  <div id="panel-apply" class="tab-panel is-active">
+
+  <!-- ===== ご案内 + 事前確認バナー + 申請前チェックリスト ===== -->
+  <section class="section" id="yoken">
+    <div class="container">
+      <h2 class="section-title">ご案内</h2>
+
+      <div style="
+        background:var(--c-surface);
+        border:1px solid var(--c-border);
+        border-radius:var(--radius-lg);
+        padding:24px 28px;
+        box-shadow:var(--shadow-card);
+        font-size:.92rem;
+        line-height:1.95;
+        color:var(--c-text);
+        margin-bottom:20px;
+      ">
+        <p style="margin-bottom:12px;">本年も「八王子まつり」を 8月7日（金）〜9日（日）の3日間開催します。臨時出店は、関係機関との協議により <strong style="color:#c0392b;">民地（私有地）でのみ</strong> の取り扱いとなります（店先での道路使用許可申請は受け付けません）。</p>
+        <p>申請ご希望の方は、<strong style="color:#c0392b;">7月17日（金）まで</strong> に下部のWeb申請フォームよりお申し込みください。</p>
+      </div>
+
+      <div class="warn-box" style="margin-bottom:36px;">
+        <div class="warn-box__icon">📚</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title">お申し込み前に、以下の資料に必ず目を通してください</p>
+          <div class="warn-box__body">
+            <div class="doc-links">
+              <a class="doc-link" href="docs/annai.pdf" target="_blank" rel="noopener">
+                <span class="doc-link__icon">📄</span>臨時出店のご案内
+              </a>
+              <a class="doc-link" href="docs/handan.pdf" target="_blank" rel="noopener">
+                <span class="doc-link__icon">📄</span>臨時出店の判断の仕方
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">申請前チェックリスト</h2>
+
+      <p style="font-weight:var(--fw-bold); color:var(--c-green-dark); font-size:1.02rem; margin-bottom:20px;">
+        八王子まつりの臨時出店は<strong style="color:#c0392b;">民地（私有地）のみ</strong>の取り扱いです。下記すべてに当てはまることをご確認のうえ、お申し込みください。
+      </p>
+
+      <ul class="checklist">
+        <li>
+          <span><strong>出店に使える民地（私有地）を確保している</strong>
+          <span class="note">道路使用許可は取得できません。甲州街道沿いの民地での出店も不可です。机やテントが公道上に出ないように。</span>
+          <div class="area-compare">
+            <div class="area-card area-card--ok">
+              <p class="area-card__head">⭕ 出店できます</p>
+              <img class="area-card__img" src="img/AreaOK.png" alt="民地（私有地）があり出店可能な例" loading="lazy">
+              <p class="area-card__cap">建物前に民地（私有地）があり、机・テントが道路上にはみ出ない場合</p>
+            </div>
+            <div class="area-card area-card--ng">
+              <p class="area-card__head">❌ 出店できません</p>
+              <img class="area-card__img" src="img/AreaNG.png" alt="民地がなく道路上に出てしまう出店不可の例" loading="lazy">
+              <p class="area-card__cap">民地がなく、机・テントが公道にはみ出てしまう場合（甲州街道沿いも不可）</p>
+            </div>
+          </div>
+          </span>
+        </li>
+        <li>
+          <span><strong>（他者所有地の場合）管理者と書面で利用許可を取り交わしている。</strong>
+          <span class="note">ビル・マンション・駐車場・公開空地など。消防法に抵触しない場合に限ります。</span></span>
+        </li>
+        <li>
+          <span>
+            <figure class="thumb-fig">
+              <img src="img/BeerBBQ.png" alt="ビールサーバーから注ぐ・鉄板で加熱調理するイラスト" loading="lazy" width="800" height="436">
+            </figure>
+            <strong>（調理行為をする場合）保健所への臨時出店届の内容を確認している</strong>
+          <span class="note">鉄板での加熱調理／ビールサーバー等から注ぐ／盛りつけ 等が対象。申請フォーム内で必要事項を入力いただきます。事前に下記資料をご一読ください。</span>
+          <span class="doc-links">
+            <a class="doc-link" href="docs/hokenjo.pdf" target="_blank" rel="noopener">
+              <span class="doc-link__icon">📄</span>保健所への臨時出店届（事前確認資料）
+            </a>
+          </span>
+</span>
+        </li>
+        <li>
+          <span>
+            <figure class="thumb-fig">
+              <img src="img/takeout.png" alt="テイクアウト用の紙袋のイラスト" loading="lazy" width="600" height="327">
+            </figure>
+            <strong>（見本陳列のテイクアウト販売をする場合）申請・食品表示に対応できる</strong>
+          <span class="note">通常の飲食店営業の範囲内であれば届出は不要です。</span></span>
+        </li>
+        <li>
+          <span><strong>八王子商工会議所の会員事業所である（または入会手続きに同意できる）</strong>
+          <span class="note">非会員の方は、出店の申請が許可された後にご入会のお手続きをお願いします。</span></span>
+        </li>
+      </ul>
+
+
+
+      <p style="font-size:.86rem; color:var(--c-muted); margin-top:18px;">
+        ※ 判断に迷う場合は、下部の「お問い合わせ」先までご連絡ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 申込の流れ ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">申込から出店までの流れ</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">1</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">このページ下部のボタンから申込フォームへ</p>
+            <p class="step__desc">必要事項を入力して送信してください。送信後、受付確認メールが届きます。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">2</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">指定の方法で身分証明書をアップロード</p>
+            <p class="step__desc">フォーム送信後に案内されるリンク先から、本人確認書類をアップロードしてください。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">3</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">審査・結果通知</p>
+            <p class="step__desc">書類確認後、申請期限（7月17日）から1週間を目処に、メールにて審査結果をお知らせします。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num-col">
+            <div class="step__num">4</div>
+            <div class="step__line"></div>
+          </div>
+          <div class="step__body">
+            <p class="step__title">出店費用のお支払い・準備</p>
+            <p class="step__desc">承認された方には出店料の請求書を発送します。期日までにお支払いください。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+
+      <!-- 申請≠許可 念押しボックス -->
+      <div class="warn-box" style="margin-bottom:24px; text-align:left;">
+        <div class="warn-box__icon">📋</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title">申込は「出店希望の受付」であり、出店許可ではありません</p>
+          <div class="warn-box__body">
+            <p>ご申込いただいた後、実行委員会による審査を行います。<strong>審査結果によっては、出店をご遠慮いただく場合があります。</strong>あらかじめご了承の上、お申し込みください。</p>
+            <ul style="margin-top:8px;">
+              <li>審査結果は申請期限（7月17日）から1週間を目処に、メールにてご連絡します</li>
+              <li>審査基準・定員等の詳細は事務局までお問い合わせください</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">出店希望の申込はこちら</h2>
+      <p class="cta-section__sub">フォーム入力には約5〜10分かかります。送信後にクラウドストレージ（Dropbox）への書類アップロードをお願いします。</p>
+      <a href="https://business.form-mailer.jp/fms/7e54c7d0354341" class="cta-btn" target="_blank" rel="noopener">
+        申込フォームへ進む →
+      </a>
+      <p class="cta-note">※ FormMailer（申込受付フォーム）へ移動します</p>
+    </div>
+  </section>
+
+  </div><!-- /#panel-apply -->
+
+  <div id="panel-upload" class="tab-panel">
+
+  <!-- ===== 身分証アップロード案内 ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">書類のアップロードについて</h2>
+
+      <!-- 書類リスト（先頭） -->
+      <div style="
+        background:var(--c-surface);
+        border:1px solid var(--c-border);
+        border-radius:var(--radius-md);
+        padding:20px 22px;
+        box-shadow:var(--shadow-card);
+        margin-bottom:20px;
+        font-size:.86rem;
+      ">
+        <p style="font-weight:var(--fw-bold); color:var(--c-text); margin-bottom:10px;">アップロードが必要な書類（出店申請者〔代表者〕のもの）</p>
+        <p style="margin-bottom:8px; color:var(--c-muted);">① 本人確認書類（以下のいずれか1点）</p>
+        <div class="doc-cards" style="margin-bottom:10px;">
+
+          <!-- 運転免許証 -->
+          <div class="doc-card">
+            <div class="doc-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+                <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788" stroke-width="1.5"/>
+                <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35"/>
+                <circle cx="32" cy="30" r="10" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+                <circle cx="32" cy="30" r="3" fill="#2d6a4f"/>
+                <line x1="32" y1="20" x2="32" y2="27" stroke="#2d6a4f" stroke-width="2"/>
+                <line x1="32" y1="33" x2="32" y2="40" stroke="#2d6a4f" stroke-width="2"/>
+                <line x1="22" y1="30" x2="29" y2="30" stroke="#2d6a4f" stroke-width="2"/>
+                <line x1="35" y1="30" x2="42" y2="30" stroke="#2d6a4f" stroke-width="2"/>
+              </svg>
+            </div>
+            <p class="doc-card__name">運転免許証</p>
+            <p class="doc-card__note">表面のみ</p>
+          </div>
+
+          <!-- 運転経歴証明書 -->
+          <div class="doc-card">
+            <div class="doc-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+                <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788" stroke-width="1.5"/>
+                <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35"/>
+                <path d="M32 18 L42 22 L42 30 Q42 38 32 42 Q22 38 22 30 L22 22 Z" fill="#40916c" opacity=".2" stroke="#2d6a4f" stroke-width="1.5"/>
+                <polyline points="26,30 30,35 38,24" fill="none" stroke="#2d6a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="doc-card__name">運転経歴証明書</p>
+            <p class="doc-card__note">表面のみ</p>
+          </div>
+
+          <!-- マイナンバーカード -->
+          <div class="doc-card">
+            <div class="doc-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+                <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788" stroke-width="1.5"/>
+                <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35"/>
+                <circle cx="20" cy="26" r="5" fill="#2d6a4f" opacity=".5"/>
+                <path d="M12 42 Q12 34 20 34 Q28 34 28 42" fill="#2d6a4f" opacity=".5"/>
+                <rect x="33" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6"/>
+                <rect x="41" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6"/>
+                <rect x="49" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6"/>
+                <rect x="33" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4"/>
+                <rect x="41" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4"/>
+                <rect x="49" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4"/>
+                <rect x="33" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3"/>
+                <rect x="41" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3"/>
+                <rect x="49" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3"/>
+              </svg>
+            </div>
+            <p class="doc-card__name">マイナンバーカード</p>
+            <p class="doc-card__note" style="font-weight:var(--fw-bold);">表面のみ</p>
+          </div>
+
+        </div>
+        <p style="color:var(--c-muted);">② <strong style="color:var(--c-text);">住所変更がある場合</strong>は、変更後の住所がわかる写し（各種証明書の裏面など）も添付してください。</p>
+        <p style="margin-top:8px; color:var(--c-muted);">③ <strong style="color:var(--c-text);">飲食出店の場合は、営業許可書のコピー（食品営業許可証）</strong>も添付してください。</p>
+        <p style="margin-top:10px; font-size:.82rem; color:var(--c-muted);">※ ファイル形式：JPG・PNG・PDF。1ファイルあたり10MB以内。</p>
+      </div>
+
+      <div class="dropbox-box">
+        <div class="dropbox-box__header">
+          <!-- Dropbox ロゴ簡易SVG -->
+          <div class="dropbox-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="#ffffff">
+              <path d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="dropbox-box__title">クラウドストレージ（Dropbox）へのファイルアップロード</p>
+            <p class="dropbox-box__sub">フォーム送信後に専用リンクをお送りします</p>
+          </div>
+        </div>
+        <div class="dropbox-box__body">
+          <p>申込フォームの送信完了後、受付確認メールに<strong>画像アップロード用のリンク</strong>が記載されています。以下の手順でアップロードをお願いします。</p>
+          <ol>
+            <li>受付確認メールに記載のリンクをクリック</li>
+            <li>アップロード画面が開いたら「ファイルをアップロード」を選択</li>
+            <li>本人確認書類の画像または PDF を選択してアップロード</li>
+            <li>アップロード完了を確認して終了</li>
+          </ol>
+
+          <!-- Dropbox ファイルリクエスト画面モックアップ -->
+          <div aria-hidden="true" style="
+            margin-top:16px;
+            margin-bottom:4px;
+            pointer-events:none;
+            user-select:none;
+          ">
+            <div style="
+              background:#ffffff;
+              border:1px solid #d0d0d0;
+              border-radius:8px;
+              max-width:400px;
+              margin:0 auto;
+              padding:28px 24px 20px;
+              font-family:'BIZ UDPGothic',sans-serif;
+              box-shadow:0 1px 6px rgba(0,0,0,.10);
+              text-align:center;
+            ">
+              <p style="font-size:.95rem; font-weight:700; color:#1b1b1b; margin-bottom:6px;">八王子商工会議所 からのリクエストです</p>
+              <p style="font-size:.82rem; color:#0061ff; margin-bottom:20px;">出店写真</p>
+              <div style="
+                border:2px dashed #c0c0c0;
+                border-radius:6px;
+                padding:32px 16px;
+                background:#fafafa;
+                margin-bottom:20px;
+              ">
+                <div style="
+                  display:inline-block;
+                  background:#1b1b1b;
+                  color:#fff;
+                  font-size:.9rem;
+                  font-weight:700;
+                  padding:10px 28px;
+                  border-radius:4px;
+                  margin-bottom:10px;
+                ">ファイルを追加</div>
+                <p style="font-size:.82rem; color:#666; margin:0;">またはこちらにドラッグ</p>
+              </div>
+              <!-- Dropbox ロゴ -->
+              <div style="margin-bottom:14px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="#0061FF" style="display:inline-block; vertical-align:middle;">
+                  <path d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z"/>
+                </svg>
+              </div>
+              <p style="font-size:.75rem; color:#555; line-height:1.65; margin:0;">
+                ファイルは八王子商工会議所のDropboxに安全にアップロードされます。
+              </p>
+            </div>
+            <p style="text-align:center; font-size:.72rem; color:var(--c-muted); margin-top:6px;">↑ 実際のクラウドストレージ画面イメージ（クリックできません）</p>
+          </div>
+
+          <div style="
+            margin-top:12px;
+            background:var(--c-green-pale);
+            border:1px solid var(--c-border);
+            border-radius:var(--radius-sm);
+            padding:12px 14px;
+            font-size:.82rem;
+            line-height:1.75;
+            color:var(--c-muted);
+          ">
+            <strong style="color:var(--c-text);">【個人情報の利用目的について】</strong><br>
+            ご提出いただいた申込情報および身分証明書は、出店審査のほか、以下の目的で関係各所へ共有・提出する場合があります。目的外の利用は行いません。
+            <ul style="padding-left:18px; margin-top:6px;">
+              <li>保健所への臨時出店届（飲食出店の場合）</li>
+              <li>出店許可書の発行に係る手続き</li>
+              <li>祭り運営に必要なその他の関係機関への提出</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意喚起 -->
+      <div class="warn-box" style="margin-top:20px;">
+        <div class="warn-box__icon">⚠️</div>
+        <div class="warn-box__content">
+          <p class="warn-box__title">書類アップロードが確認できない場合は審査が完了しません</p>
+          <div class="warn-box__body">
+            <p>申込締切日（7月17日（金））までにアップロードが完了しない場合、申込を無効とさせていただく場合があります。お早めの手続きをお願いいたします。</p>
+            <ul>
+              <li>アップロード後の取り消しはお電話にてご連絡ください</li>
+              <li>不鮮明な画像は再提出をお願いする場合があります</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== よくある質問（アップロードタブ） ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">よくある質問</h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>クラウドストレージ（Dropbox）のアカウントがなくてもアップロードできますか？</summary>
+          <div class="faq-answer">
+            はい、アカウント不要でアップロードいただけます。メール記載のリンクを開き、「ファイルをアップロード」ボタンからお進みください。
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /#panel-upload -->
+
+  <!-- ===== よくある質問（申請タブ） ===== -->
+  <div id="panel-apply-faq" class="tab-panel is-active">
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">よくある質問</h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>申込すれば必ず出店できますか？</summary>
+          <div class="faq-answer">
+            申込は「出店希望の受付」であり、出店を保証するものではありません。実行委員会による審査を経て、出店の可否をご連絡します。会場のスペース・安全基準・出店内容等を総合的に判断するため、ご希望に添えない場合があります。あらかじめご了承ください。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>出店できる商品に制限はありますか？</summary>
+          <div class="faq-answer">
+            今回の募集は<strong>飲食出店（飲食物の販売）</strong>を対象としています。提供品目によっては食品衛生法に基づく許可・届出が必要となり、事前審査の対象となります。詳細はフォーム送信後にお送りする案内をご確認ください。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>申込後に内容を変更したい場合はどうすればよいですか？</summary>
+          <div class="faq-answer">
+            申込締切前であれば、下記お問い合わせ先までメールまたはお電話でご連絡ください。締切後の変更はお受けできない場合があります。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>出店場所は選べますか？</summary>
+          <div class="faq-answer">
+            出店場所は主催者側で割り当てます。ご希望がある場合はフォームの備考欄にご記入ください。ご要望に添えない場合もありますのでご了承ください。
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+  </div><!-- /#panel-apply-faq -->
+
+  <!-- ===== お問い合わせ ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">お問い合わせ</h2>
+      <div style="
+        background:var(--c-surface);
+        border:1px solid var(--c-border);
+        border-radius:var(--radius-md);
+        padding:22px 24px;
+        font-size:.88rem;
+        color:var(--c-muted);
+        line-height:2;
+        box-shadow:var(--shadow-card);
+      ">
+        <p><strong style="color:var(--c-text);">八王子商工会議所</strong>（八王子まつり担当：宇津木・北島）</p>
+        <p>🏢 所在地：〒192-0062 八王子市大横町11-1</p>
+        <p>📞 電話：<a href="tel:0426236311" style="color:var(--c-accent);">042-623-6311</a>（受付 平日 9:00〜17:00）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2026 八王子まつり実行委員会　All Rights Reserved.</p>
+    <p style="margin-top:6px;"><a href="#">プライバシーポリシー</a></p>
+  </footer>
+
+  <script>
+    function switchTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        var active = btn.id === 'tab-' + name;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      // panel-apply と panel-apply-faq は申請タブに、panel-upload はアップロードタブに連動
+      document.querySelectorAll('.tab-panel').forEach(function(panel) {
+        var id = panel.id;
+        var active = (name === 'apply')
+          ? (id === 'panel-apply' || id === 'panel-apply-faq')
+          : (id === 'panel-upload');
+        panel.classList.toggle('is-active', active);
+      });
+      history.replaceState(null, '', '#' + name);
+    }
+
+    // アンカーが #upload のとき自動でアップロードタブを開く
+    (function() {
+      if (location.hash === '#upload') {
+        switchTab('upload');
+      }
+    })();
+  </script>
+</body>
+</html>
