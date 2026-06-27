@@ -938,8 +938,8 @@ details[open].faq-item summary::after { content: '－'; }
   margin-top: 2px;
 }
 
-/* ===== Tab UI ===== */
-.tab-bar {
+/* ===== Page Navigation ===== */
+.page-nav {
   display: flex;
   background: var(--c-surface);
   border-bottom: 2px solid var(--c-border);
@@ -948,30 +948,29 @@ details[open].faq-item summary::after { content: '－'; }
   z-index: 100;
   box-shadow: 0 2px 8px rgba(45,106,79,.08);
 }
-.tab-btn {
+.page-nav__link {
   flex: 1;
   padding: 16px 12px;
   font-family: var(--ff-body);
   font-size: 1rem;
   font-weight: var(--fw-bold);
   color: var(--c-muted);
-  background: transparent;
-  border: none;
+  text-decoration: none;
+  text-align: center;
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
-  cursor: pointer;
   letter-spacing: .04em;
   transition: color .2s, border-color .2s;
 }
-.tab-btn.is-active {
-  color: var(--c-green-dark);
-  border-bottom-color: var(--c-green-dark);
-}
-.tab-btn:hover:not(.is-active) {
+.page-nav__link:hover {
   color: var(--c-accent);
 }
-.tab-panel { display: none; }
-.tab-panel.is-active { display: block; }
+.page-nav__link.is-current {
+  color: var(--c-green-dark);
+  border-bottom-color: var(--c-green-dark);
+  cursor: default;
+  pointer-events: none;
+}
 @media (max-width: 480px) {
-  .tab-btn { font-size: 1rem; padding: 12px 6px; line-height: 1.3; letter-spacing: 0; }
+  .page-nav__link { font-size: 1rem; padding: 12px 6px; line-height: 1.3; letter-spacing: 0; }
 }

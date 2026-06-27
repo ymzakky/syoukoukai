@@ -22,19 +22,12 @@
 
 
 
-  <!-- ===== タブナビゲーション ===== -->
-  <div class="tab-bar" role="tablist">
-    <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-apply" id="tab-apply"
-      onclick="switchTab('apply')">
-      📋 申請する方へ
-    </button>
-    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-upload" id="tab-upload"
-      onclick="switchTab('upload')">
-      📁 書類をアップロードする方へ
-    </button>
-  </div>
+  <!-- ===== ページナビゲーション ===== -->
+  <nav class="page-nav" aria-label="ページナビゲーション">
+    <span class="page-nav__link is-current" aria-current="page">📋 申請する方へ</span>
+    <a class="page-nav__link" href="shopentry2026_upload.html">📁 書類をアップロードする方へ</a>
+  </nav>
 
-  <div id="panel-apply" class="tab-panel is-active">
 
     <!-- ===== ご案内 + 事前確認バナー + 申請前チェックリスト ===== -->
     <section class="section" id="yoken" style="padding-bottom: 0;">
@@ -85,7 +78,7 @@
             <div class="step__body">
               <p class="step__title">指定の方法で各種写真・書類をアップロード</p>
               <p class="step__desc">フォーム送信後に届く受付確認メールに、書類アップロード用のリンクが記載されています。そちらからアップロードしてください。</p>
-              <p style="margin-top:10px; font-size:1rem; color:var(--c-muted);">詳しい手順は上部の「📁 書類をアップロードする方へ」タブをご確認ください。
+              <p style="margin-top:10px; font-size:1rem; color:var(--c-muted);">詳しい手順は<a href="shopentry2026_upload.html" style="color:var(--c-accent); text-decoration:underline;">「書類をアップロードする方へ」ページ</a>をご確認ください。
               </p>
             </div>
           </div>
@@ -334,7 +327,7 @@
             <div class="warn-box__body">
               <p>送信完了後に届く受付確認メールに、書類アップロード用リンクが記載されています。申込締切日（7月17日）までにアップロードが完了しない場合、申込を無効とさせていただく場合があります。</p>
             </div>
-            <a class="cta-btn cta-btn--sub" href="shopentry2026.html#upload">
+            <a class="cta-btn cta-btn--sub" href="shopentry2026_upload.html">
               <span>📁 書類をアップロード前にこちらをお読みください</span>
             </a>
 
@@ -343,243 +336,6 @@
       </div>
     </section>
 
-  </div><!-- /#panel-apply -->
-
-  <div id="panel-upload" class="tab-panel">
-
-    <!-- ===== 書類アップロード案内 ===== -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">書類のアップロード方法</h2>
-        <p class="upload-panel-lead">申込フォームを送信済みの方は、以下の<strong>3つの手順</strong>で書類のアップロードを完了してください。</p>
-
-        <!-- 注意喚起（最上部） -->
-        <div class="warn-box" style="margin-bottom:24px;">
-          <div class="warn-box__icon">⚠️</div>
-          <div class="warn-box__content">
-            <p class="warn-box__title">書類アップロードが確認できない場合は出店審査ができません</p>
-            <div class="warn-box__body">
-              <p>申込締切日（7月17日（金））までにアップロードが完了しない場合、申込を無効とさせていただく場合があります。お早めの手続きをお願いいたします。</p>
-              <ul>
-                <li>アップロード後の取り消しはお電話にてご連絡ください</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- ① メール確認案内 -->
-        <div class="upload-step">
-          <h3 class="upload-step__heading">
-            <span class="upload-step__heading-num" aria-hidden="true">1</span>
-            受付確認メールのリンクを開く
-          </h3>
-          <div class="upload-step__body">
-            <p>書類アップロード用のリンクは、<strong>申込フォーム送信後に届く受付確認メール</strong>に記載されています。そのリンクからアップロードをお願いします。</p>
-            <div class="upload-step__sub">
-              <p class="upload-step__sub-title">メールが届いていない方は：</p>
-              <ol>
-                <li><strong>迷惑メールフォルダ</strong>もご確認ください（自動振り分けされている場合があります）</li>
-                <li>それでも見つからない場合は、<strong>八王子商工会議所（042-623-6311）へお電話</strong>でお問い合わせください</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-
-        <!-- ② アップロード必要書類リスト -->
-        <div class="upload-step">
-          <h3 class="upload-step__heading">
-            <span class="upload-step__heading-num" aria-hidden="true">2</span>
-            アップロードする書類を確認する
-          </h3>
-          <div class="upload-step__body">
-          <ul class="doc-list">
-            <!-- ① 身分証明書類 -->
-            <li class="doc-list-item">
-              <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">代表者の身分証明書類（いずれか1点）</strong>
-              <div class="doc-cards" style="margin-top:10px; margin-bottom:2px;">
-                <div class="doc-card">
-                  <div class="doc-card__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48"
-                      aria-hidden="true">
-                      <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788"
-                        stroke-width="1.5" />
-                      <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35" />
-                      <circle cx="32" cy="30" r="10" fill="none" stroke="#2d6a4f" stroke-width="2" />
-                      <circle cx="32" cy="30" r="3" fill="#2d6a4f" />
-                      <line x1="32" y1="20" x2="32" y2="27" stroke="#2d6a4f" stroke-width="2" />
-                      <line x1="32" y1="33" x2="32" y2="40" stroke="#2d6a4f" stroke-width="2" />
-                      <line x1="22" y1="30" x2="29" y2="30" stroke="#2d6a4f" stroke-width="2" />
-                      <line x1="35" y1="30" x2="42" y2="30" stroke="#2d6a4f" stroke-width="2" />
-                    </svg>
-                  </div>
-                  <p class="doc-card__name">運転免許証</p>
-                  <p class="doc-card__note">住所変更時は裏面も</p>
-                </div>
-                <div class="doc-card">
-                  <div class="doc-card__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48"
-                      aria-hidden="true">
-                      <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788"
-                        stroke-width="1.5" />
-                      <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35" />
-                      <path d="M32 18 L42 22 L42 30 Q42 38 32 42 Q22 38 22 30 L22 22 Z" fill="#40916c" opacity=".2"
-                        stroke="#2d6a4f" stroke-width="1.5" />
-                      <polyline points="26,30 30,35 38,24" fill="none" stroke="#2d6a4f" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                  <p class="doc-card__name">運転経歴証明書</p>
-                  <p class="doc-card__note">住所変更時は裏面も</p>
-                </div>
-                <div class="doc-card">
-                  <div class="doc-card__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48"
-                      aria-hidden="true">
-                      <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788"
-                        stroke-width="1.5" />
-                      <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35" />
-                      <circle cx="20" cy="26" r="5" fill="#2d6a4f" opacity=".5" />
-                      <path d="M12 42 Q12 34 20 34 Q28 34 28 42" fill="#2d6a4f" opacity=".5" />
-                      <rect x="33" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6" />
-                      <rect x="41" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6" />
-                      <rect x="49" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6" />
-                      <rect x="33" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4" />
-                      <rect x="41" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4" />
-                      <rect x="49" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4" />
-                      <rect x="33" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3" />
-                      <rect x="41" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3" />
-                      <rect x="49" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3" />
-                    </svg>
-                  </div>
-                  <p class="doc-card__name">マイナンバーカード</p>
-                  <p class="doc-card__note" style="font-weight:var(--fw-bold); color:var(--c-red);">裏面は提出不可</p>
-                </div>
-              </div>
-            </li>
-            <!-- ② 顔写真 -->
-            <li class="doc-list-item">
-              <span class="doc-list-badge">写真</span>
-              <strong class="doc-list-title">現場責任者の顔写真</strong>
-              <span class="doc-list-note">当日の身分確認・スタッフ証明に使用します。正面・無帽・背景無地を推奨します。</span>
-            </li>
-            <!-- ③ ゴミ請求書 -->
-            <li class="doc-list-item">
-              <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">直近の事業系ゴミの請求書または領収書</strong>
-              <span class="doc-list-note">商工会議所地区内で事業を営んでいることの確認のために必要です。</span>
-            </li>
-            <!-- ④ 利用許可書（条件付き） -->
-            <li class="doc-list-item">
-              <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">【民地を借りる場合のみ】利用許可書</strong>
-              <span class="doc-list-note">ビル・マンション・駐車場・公開空地など他者所有地を使用する場合に必要です。消防法に抵触しない場合に限ります。</span>
-              <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener"
-                style="display:inline-block; margin-top:4px; font-size:.8rem; font-weight:600; color:#795548; text-decoration:underline;">テンプレートをダウンロード</a>
-            </li>
-            <!-- ⑤ 営業許可書（飲食出店の場合のみ） -->
-            <li class="doc-list-item">
-              <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</strong>
-              <span class="doc-list-note">飲食物を提供・販売する出店の場合に必要です。</span>
-            </li>
-          </ul>
-          <p style="margin-top:14px; font-size:.9rem; color:var(--c-muted);">※ ファイル形式：JPG・PNG・PDF。1ファイルあたり10MB以内。</p>
-          </div>
-        </div>
-
-        <!-- ③ Dropboxアップロード手順 -->
-        <div class="upload-step">
-          <h3 class="upload-step__heading">
-            <span class="upload-step__heading-num" aria-hidden="true">3</span>
-            Dropboxにファイルをアップロードする
-          </h3>
-          <div class="upload-step__body">
-            <ol class="upload-steps">
-              <li>受付確認メールに記載のリンクをクリックして開く</li>
-              <li>必要書類すべての画像または PDF を選択してアップロード</li>
-              <li>名前・メールアドレスの入力欄が表示された場合は、下の説明を参照して入力する</li>
-              <li>「アップロード」ボタンを押して完了を確認する</li>
-            </ol>
-
-            <!-- モックアップA：ファイル追加画面 -->
-            <figure class="mock-frame" aria-hidden="true">
-              <div class="mock-screen">
-                <p class="mock-screen__title">Keisuke Yamazaki さんからのリクエストです</p>
-                <p class="mock-screen__subtitle">出店申請書類</p>
-                <div class="mock-dropzone">
-                  <div class="mock-btn">ファイルを追加</div>
-                  <p class="mock-dropzone__hint">またはこちらにドラッグ</p>
-                </div>
-                <div class="mock-footer">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="#0061FF"
-                    style="display:inline-block; vertical-align:middle;">
-                    <path
-                      d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z" />
-                  </svg>
-                  <p class="mock-footer__text">
-                    ファイルは Keisuke Yamazaki さんの Dropbox に安全にアップロードされます。<span style="color:#0061ff;">ファイル リクエスト</span>と Dropbox の<span style="color:#0061ff;">プライバシー ポリシー</span>についての詳細をご覧ください。
-                  </p>
-                </div>
-              </div>
-              <figcaption class="mock-caption">実際のアップロード画面イメージ（クリックできません）</figcaption>
-            </figure>
-
-            <!-- モックアップB：名前・メールアドレス入力画面（遷移後） -->
-            <p class="mock-transition-label">▼ 名前・メールアドレスの入力欄が表示された場合（次の画面）</p>
-            <figure class="mock-frame" aria-hidden="true">
-              <div class="mock-screen mock-screen--form">
-                <div class="mock-field-row">
-                  <div class="mock-field">
-                    <div class="mock-field__label">名前</div>
-                    <div class="mock-field__input mock-field__input--active">事業所名を入力</div>
-                  </div>
-                  <div class="mock-field">
-                    <div class="mock-field__label">メール アドレス</div>
-                    <div class="mock-field__input">受付確認メールの送信先</div>
-                  </div>
-                </div>
-                <div class="mock-submit-row">
-                  <div class="mock-btn">アップロード</div>
-                </div>
-              </div>
-              <figcaption class="mock-caption">実際のアップロード画面イメージ（クリックできません）</figcaption>
-            </figure>
-
-            <div class="callout-info">
-              <strong>名前・メールアドレスの入力欄が表示された場合：</strong><br>
-              【名前】欄には<strong>事業所名</strong>を、【メールアドレス】欄には<strong>受付確認メールの送信先アドレス</strong>を入力してください。
-              <p class="callout-info__note">※ 普段からDropboxをご利用の方は、この入力欄が表示されない場合があります。</p>
-            </div>
-
-            <div class="upload-complete-note">
-              <p class="upload-complete-note__title">アップロード完了後</p>
-              <p>アップロードが完了すると、<strong>Dropboxから完了通知メール</strong>が届きます。メールが届いたことを確認して、書類提出は完了です。</p>
-              <p>事務局で内容を確認します。以下の場合はご連絡することがあります。</p>
-              <ul>
-                <li>書類に不足がある場合</li>
-                <li>画像・PDFが不鮮明で内容が確認できない場合</li>
-                <li>書類の名義が申込者と異なる場合</li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.upload-step -->
-
-        <div class="privacy-note">
-          <strong class="privacy-note__title">個人情報の利用目的について</strong>
-          ご提出いただいた申込情報および身分証明書は、出店審査のほか、以下の目的で関係各所へ共有・提出する場合があります。目的外の利用は行いません。
-          <ul>
-            <li>保健所への臨時出店届（飲食出店の場合）</li>
-            <li>出店許可書の発行に係る手続き</li>
-            <li>祭り運営に必要なその他の関係機関への提出</li>
-          </ul>
-        </div>
-
-
-      </div>
-    </section>
-
-  </div><!-- /#panel-upload -->
 
   <!-- ===== お問い合わせ ===== -->
   <section class="section">
@@ -608,35 +364,6 @@
     <p style="margin-top:6px; color:rgba(255,255,255,.45); font-size:.85rem;">プライバシーポリシーは八王子商工会議所の窓口にてご確認いただけます</p>
   </footer>
 
-  <script>
-    function switchTab(name, scroll) {
-      document.querySelectorAll('.tab-btn').forEach(function (btn) {
-        var active = btn.id === 'tab-' + name;
-        btn.classList.toggle('is-active', active);
-        btn.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      document.querySelectorAll('.tab-panel').forEach(function (panel) {
-        var active = (name === 'apply')
-          ? (panel.id === 'panel-apply')
-          : (panel.id === 'panel-upload');
-        panel.classList.toggle('is-active', active);
-      });
-      history.replaceState(null, '', '#' + name);
-      if (scroll !== false) {
-        var tabBar = document.querySelector('.tab-bar');
-        var top = tabBar ? tabBar.offsetTop : 0;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
-    }
-
-    // アンカーが #upload のとき自動でアップロードタブを開く
-    (function () {
-      if (location.hash === '#upload') {
-        switchTab('upload', false);
-        setTimeout(function () { window.scrollTo(0, 0); }, 0);
-      }
-    })();
-  </script>
 </body>
 
 </html>
