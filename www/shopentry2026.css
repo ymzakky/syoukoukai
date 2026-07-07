@@ -430,6 +430,17 @@ mark { background-color: #ffe066; padding: 0 2px; }
   .area-compare { grid-template-columns: 1fr; }
 }
 
+/* チェックリスト内のイラスト（BeerBBQ / takeout 等） */
+.checklist__img {
+  width: 35%;
+}
+@media (max-width: 560px) {
+  .checklist__img {
+    width: 60%;
+    max-width: 280px;
+  }
+}
+
 /* ===== Upload Panel (panel-upload 共通) ===== */
 .upload-panel-lead {
   font-size: 1rem;
