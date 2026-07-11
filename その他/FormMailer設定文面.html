@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormMailer 設定文面（八王子まつり2026 出店受付）</title>
+  <style>
+    :root {
+      --green: #2d6a4f;
+      --green-light: #52b788;
+      --bg: #f4f7f5;
+      --ink: #1b3a2b;
+      --muted: #5a6b60;
+      --red: #c62828;
+      --orange: #e65100;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1b4332 0%, var(--green) 60%, var(--green-light) 100%);
+      color: #fff;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 1.4rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: .9rem;
+      opacity: .9;
+    }
+
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+    }
+
+    .intro {
+      background: #fff;
+      border: 1px solid #d7e3da;
+      border-left: 5px solid var(--green-light);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: .95rem;
+    }
+
+    .intro strong {
+      color: var(--green);
+    }
+
+    .todo {
+      background: #fffde7;
+      border: 2px solid #f9a825;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 32px;
+      font-size: .92rem;
+    }
+
+    .todo h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #6d2700;
+    }
+
+    .todo table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: .88rem;
+    }
+
+    .todo th,
+    .todo td {
+      border: 1px solid #e0c97a;
+      padding: 6px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .todo th {
+      background: #fff4cc;
+      white-space: nowrap;
+    }
+
+    .todo code {
+      background: #fff;
+      border: 1px solid #e0c97a;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: .85em;
+    }
+
+    .block {
+      background: #fff;
+      border: 1px solid #d7e3da;
+      border-radius: 12px;
+      padding: 0;
+      margin-bottom: 32px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(27, 58, 43, .06);
+    }
+
+    .block__head {
+      background: var(--green);
+      color: #fff;
+      padding: 14px 20px;
+    }
+
+    .block__head h2 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .block__head .tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, .2);
+      border-radius: 4px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .block__head p {
+      margin: 6px 0 0;
+      font-size: .82rem;
+      opacity: .9;
+    }
+
+    .block__body {
+      padding: 20px;
+    }
+
+    .label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .label-row span {
+      font-size: .85rem;
+      font-weight: bold;
+      color: var(--muted);
+    }
+
+    .copy-btn {
+      background: var(--green-light);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 16px;
+      font-size: .82rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background .15s;
+    }
+
+    .copy-btn:hover {
+      background: var(--green);
+    }
+
+    .copy-btn.copied {
+      background: #1b5e20;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      padding: 12px 14px;
+      border: 1px solid #cdddd2;
+      border-radius: 8px;
+      background: #fbfdfb;
+      color: #243b30;
+      resize: vertical;
+      white-space: pre;
+      overflow-wrap: normal;
+      tab-size: 2;
+    }
+
+    textarea.tall {
+      min-height: 460px;
+    }
+
+    .preview-toggle {
+      margin-top: 12px;
+    }
+
+    details {
+      margin-top: 12px;
+      border: 1px dashed #cdddd2;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 10px 14px;
+      background: #eef4f0;
+      font-size: .85rem;
+      font-weight: bold;
+      color: var(--green);
+      user-select: none;
+    }
+
+    .preview-pane {
+      padding: 18px;
+      background: #fff;
+    }
+
+    /* === ②完了画面プレビュー内のスタイルはインライン指定なのでそのまま再現される === */
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: .8rem;
+      padding: 24px;
+    }
+
+    @media (max-width:560px) {
+      header h1 {
+        font-size: 1.15rem;
+      }
+
+      .block__body {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>FormMailer 設定文面</h1>
+    <p>八王子まつり2026 出店受付 ／ コピペ用原稿</p>
+  </header>
+
+  <main>
+
+    <div class="intro">
+      出店申請は FormMailer のフォームで受け付けますが、<strong>身分証等の書類アップロードはフォームの外（受付確認メールの Dropbox リンク）</strong>で行う二段階構成です。「送信して終わったつもりになり、アップロードを失念する」事業者が出やすいため、<strong>①確認画面・②完了画面・③自動返信メール</strong>の3か所すべてで「まだ完了していない／次はアップロード」を繰り返し案内しています。<br>
+      各ブロックの「コピー」ボタンで内容をコピーし、FormMailer の各設定欄に貼り付けてください。
+    </div>
+
+    <div class="todo">
+      <h2>⚠️ 貼り付け前に差し替える3か所</h2>
+      <table>
+        <tr>
+          <th>プレースホルダ</th>
+          <th>入れるもの</th>
+          <th>出てくるブロック</th>
+        </tr>
+        <tr>
+          <td><code>{{DROPBOX_UPLOAD_URL}}</code></td>
+          <td>Dropbox ファイルリクエストの直リンクURL</td>
+          <td>②・③</td>
+        </tr>
+        <tr>
+          <td><code>{{UPLOAD_PAGE_URL}}</code></td>
+          <td>公開中の <code>shopentry2026_upload.html</code> のフルURL</td>
+          <td>②・③</td>
+        </tr>
+        <tr>
+          <td><code>%%_事業所名_%%</code></td>
+          <td>完了画面エディタで「事業所名」項目を<strong>ダブルクリック</strong>して出る置換コード（例 <code>%%_6118228_%%</code>）。取得できなければ「○○ 様」の行ごと削除でOK</td>
+          <td>②のみ</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ===== ⓪ フォーム冒頭の説明文 ===== -->
+    <section class="block">
+      <div class="block__head">
+        <h2>⓪ フォーム冒頭に表示する説明文<span class="tag">装飾可 / HTMLで貼付</span></h2>
+        <p>入力欄の一番上。詳しい案内は申請ページ側にあるので、ここは「入力前に確認すべき要点」だけに絞ります。①二段階構成の予告、②締切、③手元に用意するもの、④出店条件の4点。</p>
+      </div>
+      <div class="block__body">
+        <div class="label-row">
+          <span>↓ FormMailer の「フォームの説明文（フォーム上部に表示する文章）」の HTML/ソース編集モードに貼り付け</span>
+          <button class="copy-btn" data-target="src-intro">コピー</button>
+        </div>
+        <textarea id="src-intro" class="tall" readonly><div style="line-height:1.9;">
+  <p>令和8年度「八王子まつり」（2026年8月7日〜9日開催）の臨時出店申込フォームです。下記をご確認のうえ、必要事項をご入力ください。</p>
+
+  <p><strong>このフォームの送信だけでは申請は完了しません。</strong><br>
+  送信後に届く受付確認メールのリンクから、身分証明書などの書類アップロード（2段階目）が別途必要です。アップロードが確認できないと審査ができません。</p>
+
+  <p><strong>申込締切：</strong>2026年7月17日（金）23:59 まで（書類アップロードも同日締切）。</p>
+
+  <p><strong>入力前にお手元へご用意ください</strong>（送信後にアップロードします）</p>
+  <ul>
+    <li>代表者の身分証明書類（運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点）</li>
+    <li>現場責任者の顔写真</li>
+    <li>直近の事業系ゴミの請求書または領収書</li>
+    <li>【民地を借りる場合】利用許可書／【飲食出店の場合】営業許可証のコピー</li>
+  </ul>
+
+  <p><strong>出店に関する注意</strong></p>
+  <ul>
+    <li>臨時出店は民地（私有地）でのみ受け付けます（店先の道路使用許可申請は不可）。</li>
+    <li>本フォームは「出店希望の受付」であり、出店許可ではありません。審査結果により出店できない場合があります。</li>
+  </ul>
+
+  <p>※ 制度の詳細・必要書類の説明は「出店申請ページ」をご確認ください。</p>
+</div></textarea>
+
+        <details>
+          <summary>表示プレビューを見る</summary>
+          <div class="preview-pane">
+            <div style="line-height:1.9; color:#1b3a2b;">
+              <p>令和8年度「八王子まつり」（2026年8月7日〜9日開催）の臨時出店申込フォームです。下記をご確認のうえ、必要事項をご入力ください。</p>
+              <p><strong>このフォームの送信だけでは申請は完了しません。</strong><br>
+              送信後に届く受付確認メールのリンクから、身分証明書などの書類アップロード（2段階目）が別途必要です。アップロードが確認できないと審査ができません。</p>
+              <p><strong>申込締切：</strong>2026年7月17日（金）23:59 まで（書類アップロードも同日締切）。</p>
+              <p><strong>入力前にお手元へご用意ください</strong>（送信後にアップロードします）</p>
+              <ul>
+                <li>代表者の身分証明書類（運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点）</li>
+                <li>現場責任者の顔写真</li>
+                <li>直近の事業系ゴミの請求書または領収書</li>
+                <li>【民地を借りる場合】利用許可書／【飲食出店の場合】営業許可証のコピー</li>
+              </ul>
+              <p><strong>出店に関する注意</strong></p>
+              <ul>
+                <li>臨時出店は民地（私有地）でのみ受け付けます（店先の道路使用許可申請は不可）。</li>
+                <li>本フォームは「出店希望の受付」であり、出店許可ではありません。審査結果により出店できない場合があります。</li>
+              </ul>
+              <p>※ 制度の詳細・必要書類の説明は「出店申請ページ」をご確認ください。</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== ① 確認画面 ===== -->
+    <section class="block">
+      <div class="block__head">
+        <h2>① 確認画面に表示するメッセージ<span class="tag">装飾可 / HTMLで貼付</span></h2>
+        <p>送信ボタンを押す直前の画面。「送信後にアップロードが必要」と最初に予告します。</p>
+      </div>
+      <div class="block__body">
+        <div class="label-row">
+          <span>↓ FormMailer の「確認画面に表示するメッセージ」の HTML/ソース編集モードに貼り付け</span>
+          <button class="copy-btn" data-target="src-confirm">コピー</button>
+        </div>
+        <textarea id="src-confirm" readonly><div style="font-size:15px; line-height:1.9; color:#1b3a2b;">
+  <p style="margin:0 0 10px;">入力内容をご確認ください。問題がなければ、ページ下部の「送信する」ボタンを押してください。</p>
+
+  <div style="background:#fffde7; border:2px solid #f9a825; border-left:6px solid #e65100; border-radius:8px; padding:14px 16px; margin:14px 0;">
+    <p style="margin:0 0 6px; font-weight:bold; color:#6d2700; font-size:15px;">⚠️ この送信だけでは申請は完了しません</p>
+    <p style="margin:0; color:#6d2700;">送信後、受付確認メールに記載のリンクから<strong>身分証明書などの書類アップロード</strong>が必要です。アップロードが確認できないと審査ができません。送信後、続けてアップロードまでお進みください。</p>
+  </div>
+
+  <p style="margin:0; font-size:13px; color:#5a6b60;">※「送信する」を押すと、ご入力のメールアドレス宛に受付確認メール（アップロード用リンク付き）が自動送信されます。</p>
+</div></textarea>
+
+        <details>
+          <summary>表示プレビューを見る</summary>
+          <div class="preview-pane">
+            <div style="font-size:15px; line-height:1.9; color:#1b3a2b;">
+              <p style="margin:0 0 10px;">入力内容をご確認ください。問題がなければ、ページ下部の「送信する」ボタンを押してください。</p>
+              <div
+                style="background:#fffde7; border:2px solid #f9a825; border-left:6px solid #e65100; border-radius:8px; padding:14px 16px; margin:14px 0;">
+                <p style="margin:0 0 6px; font-weight:bold; color:#6d2700; font-size:15px;">⚠️ この送信だけでは申請は完了しません</p>
+                <p style="margin:0; color:#6d2700;">送信後、受付確認メールに記載のリンクから<strong>身分証明書などの書類アップロード</strong>が必要です。アップロードが確認できないと審査ができません。送信後、続けてアップロードまでお進みください。</p>
+              </div>
+              <p style="margin:0; font-size:13px; color:#5a6b60;">※「送信する」を押すと、ご入力のメールアドレス宛に受付確認メール（アップロード用リンク付き）が自動送信されます。</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== ② 完了画面 ===== -->
+    <section class="block">
+      <div class="block__head">
+        <h2>② 完了画面に表示するメッセージ<span class="tag">装飾可 / 差し込み可</span></h2>
+        <p>送信直後の画面。失念防止の最大の山場。「まだ終わっていない／次はアップロード」を大きく示し、アップロードリンクを2つ併記します。</p>
+      </div>
+      <div class="block__body">
+        <div class="label-row">
+          <span>↓ FormMailer の「完了画面に表示するメッセージ」の HTML/ソース編集モードに貼り付け</span>
+          <button class="copy-btn" data-target="src-complete">コピー</button>
+        </div>
+        <textarea id="src-complete" class="tall" readonly><p>%%_6118065_%% 様</p>
+<p>出店申請フォームのご送信、ありがとうございました。受付を確認しました。</p>
+<p><strong style="color:#c62828;font-size:18px;">⚠️ 申請はまだ完了していません。</strong></p>
+<p>続けて身分証明書などの書類アップロードを行ってください。<strong style="color:#c62828;">アップロードが確認できない場合、申請を無効とさせていただく場合があります。</strong></p>
+<p>■ 次にやること：書類のアップロード</p>
+<p><a href="{{DROPBOX_UPLOAD_URL}}" style="display:inline-block;background:#0061ff;color:#ffffff;font-weight:bold;font-size:16px;text-decoration:none;padding:12px 24px;border-radius:6px;">▶ 添付書類をアップロードする</a></p>
+<p>ご入力のメールアドレス宛に「受付確認メール」を自動送信しました。そちらのメールにもアップロード用リンクを記載しています。</p>
+<p>手順・必要書類の詳しい説明は <a href="{{UPLOAD_PAGE_URL}}">「書類をアップロードする方へ」ページ</a> をご確認ください。</p>
+<p>■ アップロード画面で「名前・メールアドレス」の入力画面が表示された方</p>
+<p>名前＝<strong style="color:#0061ff;">%%_6118065_%%</strong><br>メールアドレス＝<strong style="color:#0061ff;">%%_6117984_%%</strong><br>を入力してください。普段からDropboxをご利用の方は、この欄が表示されないことがあります。表示されない場合はそのまま進めてください。</p>
+<p>■ アップロードする書類</p>
+<ul>
+<li>代表者の身分証明書類（運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点／マイナンバーカードの裏面は不可）</li>
+<li>現場責任者の顔写真</li>
+<li>直近の事業系ゴミの請求書または領収書</li>
+<li>【民地を借りる場合のみ】利用許可書</li>
+<li>【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</li>
+</ul>
+<p>※ JPG・PNG・PDF／1ファイル10MB以内</p>
+<p><strong style="color:#c62828;font-size:16px;">📅 アップロード締切：2026年7月17日（金）まで</strong></p>
+<p>-----------------------------<br>お問い合わせ<br>-----------------------------</p>
+<p>八王子商工会議所（八王子まつり担当：宇津木・北島）<br>〒192-0062 八王子市大横町11-1／TEL 042-623-6311（平日 9:00〜17:00）</p></textarea>
+
+        <details>
+          <summary>表示プレビューを見る</summary>
+          <div class="preview-pane">
+            <div style="font-size:15px; line-height:1.8; color:#1b3a2b;">
+              <p>〇〇商店 様</p>
+              <p>出店申請フォームのご送信、ありがとうございました。受付を確認しました。</p>
+              <p><strong style="color:#c62828;font-size:18px;">⚠️ 申請はまだ完了していません。</strong></p>
+              <p>続けて身分証明書などの書類アップロードを行ってください。<strong style="color:#c62828;">アップロードが確認できない場合、申請を無効とさせていただく場合があります。</strong></p>
+              <p>■ 次にやること：書類のアップロード</p>
+              <p><a href="#" onclick="return false;"
+                  style="display:inline-block;background:#0061ff;color:#ffffff;font-weight:bold;font-size:16px;text-decoration:none;padding:12px 24px;border-radius:6px;">▶
+                  添付書類をアップロードする</a></p>
+              <p>ご入力のメールアドレス宛に「受付確認メール」を自動送信しました。そちらのメールにもアップロード用リンクを記載しています。</p>
+              <p>手順・必要書類の詳しい説明は <a href="#" onclick="return false;">「書類をアップロードする方へ」ページ</a> をご確認ください。</p>
+              <p>■ アップロード画面で「名前・メールアドレス」の入力画面が表示された方</p>
+              <p>名前＝<strong style="color:#0061ff;">〇〇商店</strong><br>メールアドレス＝<strong
+                  style="color:#0061ff;">example@xxx.jp</strong><br>を入力してください。普段からDropboxをご利用の方は、この欄が表示されないことがあります。表示されない場合はそのまま進めてください。</p>
+              <p>■ アップロードする書類</p>
+              <ul>
+                <li>代表者の身分証明書類（運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点／マイナンバーカードの裏面は不可）</li>
+                <li>現場責任者の顔写真</li>
+                <li>直近の事業系ゴミの請求書または領収書</li>
+                <li>【民地を借りる場合のみ】利用許可書</li>
+                <li>【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</li>
+              </ul>
+              <p>※ JPG・PNG・PDF／1ファイル10MB以内</p>
+              <p><strong style="color:#c62828;font-size:16px;">📅 アップロード締切：2026年7月17日（金）まで</strong></p>
+              <p>-----------------------------<br>お問い合わせ<br>-----------------------------</p>
+              <p>八王子商工会議所（八王子まつり担当：宇津木・北島）<br>〒192-0062 八王子市大横町11-1／TEL 042-623-6311（平日 9:00〜17:00）</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== ③ 自動返信メール ===== -->
+    <section class="block">
+      <div class="block__head">
+        <h2>③ 投稿者宛て 自動返信メール 本文<span class="tag">プレーンテキスト</span></h2>
+        <p>唯一手元に残り後から見返せる導線。アップロード用リンクを必ず記載。件名は設定済み（【八王子まつり 出店申込書】受付完了のご連絡）。</p>
+      </div>
+      <div class="block__body">
+        <div class="label-row">
+          <span>↓ FormMailer の「自動返信メール 本文」欄にそのまま貼り付け（装飾なし）</span>
+          <button class="copy-btn" data-target="src-mail">コピー</button>
+        </div>
+        <textarea id="src-mail" class="tall" readonly>このたびは「八王子まつり」出店申請フォームにお申し込みいただき、
+ありがとうございます。下記の内容で受付を確認しました。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+■ このメールだけでは申請は完了していません
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+続けて、身分証明書などの「書類アップロード」をお願いします。
+アップロードが確認できない場合、審査ができず、申請を無効と
+させていただく場合があります。
+
+▼ 書類をアップロードする（Dropbox）
+{{DROPBOX_UPLOAD_URL}}
+
+▼ アップロード手順・必要書類の詳しい説明はこちら
+{{UPLOAD_PAGE_URL}}
+
+★ アップロード締切：2026年7月17日（金）まで
+
+
+【アップロードする書類】
+ 1. 代表者の身分証明書類（いずれか1点）
+    運転免許証／運転経歴証明書／マイナンバーカード
+    ※住所変更がある場合は運転免許証・運転経歴証明書の裏面も
+    ※マイナンバーカードの裏面は提出しないでください
+ 2. 現場責任者の顔写真（正面・無帽・背景無地を推奨）
+ 3. 直近の事業系ゴミの請求書または領収書
+ 4. 【民地を借りる場合のみ】利用許可書
+ 5. 【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー
+
+ ファイル形式：JPG・PNG・PDF／1ファイル10MB以内
+
+
+【アップロードの手順】
+ 1. 上記リンクを開く
+ 2. 必要書類すべての画像またはPDFを選択してアップロード
+ 3. 名前・メールアドレスの入力欄が表示された場合は、
+    名前＝事業所名、メールアドレス＝このメールの送信先 を入力
+ 4. 「アップロード」ボタンを押して完了
+
+ ※ アップロードが完了すると、Dropboxから完了通知メールが届きます。
+ ※ メールが見当たらない場合は迷惑メールフォルダもご確認ください。
+
+
+【今後の流れ】
+ 書類確認後、申請期限（7月17日）から1週間を目処に、
+ メールにて審査結果をお知らせします。
+ ※本申請は「出店希望の受付」であり、出店許可ではありません。
+   審査結果により出店できない場合があります。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 八王子商工会議所（八王子まつり担当：宇津木・北島）
+ 〒192-0062 八王子市大横町11-1
+ TEL 042-623-6311（受付 平日 9:00〜17:00）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+※本メールは送信専用です。ご返信いただいてもお答えできません。
+　お問い合わせは上記電話番号までお願いします。</textarea>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    八王子まつり2026 出店受付 ／ FormMailer 設定原稿（社内資料）
+  </footer>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var ta = document.getElementById(btn.dataset.target);
+        if (!ta) return;
+        ta.select();
+        ta.setSelectionRange(0, ta.value.length);
+        var done = function () {
+          var orig = 'コピー';
+          btn.textContent = '✓ コピーしました';
+          btn.classList.add('copied');
+          setTimeout(function () {
+            btn.textContent = orig;
+            btn.classList.remove('copied');
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(ta.value).then(done, function () {
+            document.execCommand('copy'); done();
+          });
+        } else {
+          document.execCommand('copy'); done();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
