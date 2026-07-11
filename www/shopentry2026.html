@@ -32,15 +32,52 @@
         border-radius:var(--radius-lg);
         padding:24px 28px;
         box-shadow:var(--shadow-card);
-        font-size:1rem;
-        line-height:1.95;
+        font-size:1.05rem;
+        line-height:1.9;
         color:var(--c-text);
         margin-bottom:20px;
       ">
-          <p style="margin-bottom:12px;">本年も「八王子まつり」を 8月7日（金）〜9日（日）の3日間開催します。臨時出店は、関係機関との協議により <strong
-              style="color:var(--c-red);">民地（私有地）でのみ</strong> の取り扱いとなります（店先での道路使用許可申請は受け付けません）。</p>
-          <p>申請ご希望の方は、<strong style="color:var(--c-red); font-size:1.2em;">7月17日（金）まで</strong> に下部のWeb申請フォームよりお申し込みください。
-          </p>
+          <p style="font-size:1.15rem; font-weight:var(--fw-bold); color:var(--c-green-xdark); margin-bottom:14px;">本年も「八王子まつり」を <strong style="color:var(--c-green-dark);">8月7日（金）〜9日（日）</strong> の3日間開催します。</p>
+
+          <ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:10px; align-items:flex-start;"><span aria-hidden="true" style="color:var(--c-green-dark); font-weight:var(--fw-bold); flex-shrink:0;">●</span><span>営業できる時間は <strong>各日 12:00〜20:30</strong>。準備・片付けは、この時間の前後に行っていただけます。</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start;"><span aria-hidden="true" style="color:var(--c-green-dark); font-weight:var(--fw-bold); flex-shrink:0;">●</span><span>臨時出店は、関係機関との協議により <strong style="color:var(--c-red);">民地（私有地）でのみ</strong> 認められます。</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start;"><span aria-hidden="true" style="color:var(--c-green-dark); font-weight:var(--fw-bold); flex-shrink:0;">●</span><span>店先での <strong>道路使用許可申請は受け付けません。</strong></span></li>
+          </ul>
+
+          <div style="background:var(--c-green-pale); border:1px solid var(--c-border); border-left:5px solid var(--c-green-dark); border-radius:var(--radius-sm); padding:14px 18px;">
+            <p style="margin:0;">申請ご希望の方は、<strong style="color:var(--c-red); font-size:1.25em;">令和8年7月24日（金）正午12:00まで</strong> に、下部のWeb申請フォームよりお申し込みください。</p>
+          </div>
+
+          <p style="margin-top:18px;"><strong style="color:var(--c-red); font-size:1.1rem;">⚠️ 下記の資料に必ず目を通してから、お申し込みください。</strong></p>
+          <div class="doc-links" style="margin-top:16px;">
+            <a class="doc-link" href="docs/annai2026.pdf" target="_blank" rel="noopener">
+              <span class="doc-link__icon">📄</span>「臨時出店」のご案内（PDF）
+            </a>
+            <a class="doc-link" href="docs/youkou2026.pdf" target="_blank" rel="noopener">
+              <span class="doc-link__icon">📄</span>臨時出店要項（PDF）
+            </a>
+            <a class="doc-link" href="docs/hokenjo.pdf" target="_blank" rel="noopener">
+              <span class="doc-link__icon">📄</span>保健所への申請に係る事前確認資料
+            </a>
+          </div>
+        </div>
+
+        <!-- 申請≠許可 念押しボックス（ご案内の直後） -->
+        <div class="warn-box" style="margin-top:20px; margin-bottom:8px; text-align:left;">
+          <div class="warn-box__icon">⚠️</div>
+          <div class="warn-box__content">
+            <p class="warn-box__title"
+              style="font-size:1.25rem; border-bottom:2px solid var(--c-warn-text); padding-bottom:8px; margin-bottom:10px;">
+              申請は「出店希望の受付」であり、<wbr>出店許可ではありません</p>
+            <div class="warn-box__body">
+              <p>ご申請いただいた後、実行委員会による審査を行います。<strong>審査結果によっては、出店をご遠慮いただく場合があります。</strong>あらかじめご了承の上、ご申請ください。</p>
+              <ul style="margin-top:8px;">
+                <li>審査結果は申請期限（7月24日）から1週間を目処に、メールにてご連絡します</li>
+                <li>審査基準・定員等の詳細は事務局までお問い合わせください</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -70,7 +107,7 @@
             <div class="step__body">
               <p class="step__title">指定の方法で各種写真・書類をアップロード</p>
               <p class="step__desc">フォーム送信後に届く受付確認メールに、書類アップロード用のリンクが記載されています。そちらからアップロードしてください。</p>
-              <p style="margin-top:10px; font-size:1rem; color:var(--c-muted);">詳しい手順は<a href="shopentry2026_upload.html" style="color:var(--c-accent); text-decoration:underline;">「書類をアップロードする方へ」ページ</a>をご確認ください。
+              <p style="margin-top:10px; font-size:1rem; color:var(--c-muted);">詳しい手順は<a href="shopentry2026_upload.html" target="_blank" rel="noopener" style="color:var(--c-green-dark); text-decoration:underline;">「書類をアップロードする方へ」ページ</a>をご確認ください。
               </p>
             </div>
           </div>
@@ -82,18 +119,7 @@
             </div>
             <div class="step__body">
               <p class="step__title">審査・結果通知</p>
-              <p class="step__desc">書類確認後、申請期限（7月17日）から1週間を目処に、メールにて審査結果をお知らせします。</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step__num-col">
-              <div class="step__num">4</div>
-              <div class="step__line"></div>
-            </div>
-            <div class="step__body">
-              <p class="step__title">出店費用のお支払い・準備</p>
-              <p class="step__desc">承認された方には出店料の請求書を発送します。期日までにお支払いください。</p>
+              <p class="step__desc">書類確認後、申請期限（7月24日）から1週間を目処に、メールにて審査結果をお知らせします。</p>
             </div>
           </div>
 
@@ -131,17 +157,14 @@
 
         <p
           style="font-weight:var(--fw-bold); color:var(--c-green-xdark); font-size:1.1rem; margin-bottom:20px; line-height:1.7;">
-          八王子まつりの臨時出店は<strong style="color:var(--c-red);">民地（私有地）のみ</strong>の取り扱いです。また、調理行為を行う場合は、<strong
+          八王子まつりの臨時出店は<strong style="color:var(--c-red);">民地（私有地）のみ</strong>の取り扱いです。調理行為のほか、<strong>物販（容器包装された飲食物や飲食物以外の販売）も申請の対象</strong>です。また、調理行為を行う場合は、<strong
             style="color:var(--c-red);">保健所への臨時出店届の提出が必要です。</strong>下記すべてに当てはまることをご確認のうえ、お申し込みください。
-          <span
-            style="display:block; font-size:1rem; font-weight:var(--fw-normal); color:var(--c-muted); margin-top:10px;">※
-            申請は出店希望の受付です。審査結果により出店できない場合があります。<br>※ 判断に迷う場合は、下部の「お問い合わせ」先までご連絡ください。</span>
         </p>
 
         <ul class="checklist">
           <li>
             <span><strong>出店に使える民地（私有地）を確保している</strong>
-              <span class="note">道路使用許可は取得できません。甲州街道沿いの民地での出店も不可です。<mark>机やテントが公道上に出ないように</mark>設営してください。</span>
+              <span class="note">道路使用許可は取得できません。<mark>机やテントが公道上に出ないように</mark>設営してください。<br><strong style="color:var(--c-red);">甲州街道に面する民地は、人流集中時の安全確保および夜店出店エリアであることから、原則出店不可です。</strong></span>
               <div class="area-compare">
                 <div class="area-card area-card--ok">
                   <p class="area-card__head">⭕ 出店できます</p>
@@ -151,26 +174,21 @@
                 <div class="area-card area-card--ng">
                   <p class="area-card__head">❌ 出店できません</p>
                   <img class="area-card__img" src="img/AreaNG.png" alt="民地がなく道路上に出てしまう出店不可の例" loading="lazy">
-                  <p class="area-card__cap">民地がなく、机・テントが公道にはみ出てしまう場合（甲州街道沿いも不可）</p>
+                  <p class="area-card__cap">民地がなく、机・テントが公道にはみ出てしまう場合</p>
                 </div>
               </div>
             </span>
           </li>
           <li>
-            <span><strong>（他者所有地の場合）管理者と書面で利用許可を取り交わしている。</strong>
-              <span class="note">ビル・マンション・駐車場・公開空地など。消防法に抵触しない場合に限ります。</span>
-              <span class="doc-links">
-                <a class="doc-link" href="docs/riyoukyoka.pdf" target="_blank" rel="noopener">
-                  <span class="doc-link__icon">📄</span>利用許可書テンプレート（PDF）
-                </a>
-              </span></span>
+            <span><strong>（自社の私有地でない場所の場合）オーナー・管理会社から利用の許可を得ている</strong>
+              <span class="note">入居しているビルの共有スペース・公開空地・駐車場の敷地など。<strong style="color:var(--c-red);">自社が入居していない建物や、他社の土地を借りての出店はできません。</strong>踊り場・階段付近・非常口・廊下等、消防法で避難経路の確保が求められる場所への出店はできません。<br>利用許可書等の事務局への提出は不要です。同じ場所への出店を希望する事業者がいることが分かった場合は、ご相談のうえ出店場所を決めてください。</span></span>
           </li>
           <li>
             <span>
               <strong>（調理行為をする場合）保健所の臨時出店に関する注意事項の内容を確認している</strong>
               <div style="display:flex; gap:20px; align-items:flex-start; margin:12px 0 4px;">
-                <img src="img/BeerBBQ.png" alt="ビールサーバーから注ぐ・鉄板で加熱調理するイラスト" loading="lazy"
-                  style="width:35%; height:auto; border-radius:var(--radius-md); border:1px solid var(--c-border); flex-shrink:0;">
+                <img class="checklist__img" src="img/BeerBBQ.png" alt="ビールサーバーから注ぐ・鉄板で加熱調理するイラスト" loading="lazy"
+                  style="height:auto; border-radius:var(--radius-md); border:1px solid var(--c-border); flex-shrink:0;">
                 <span class="note" style="font-size:1.1rem;">・ビールサーバー等から注ぐ<br>・鉄板での加熱調理<br>・盛りつけ</span>
               </div>
               <span class="note" style="font-size:1.05rem; display:block; margin:8px 0;">これらの調理行為を行う場合は、<mark>保健所への臨時出店届の提出が必要です。</mark>申請フォーム内で必要事項を入力いただきます。</span>
@@ -184,17 +202,17 @@
             </span>
           </li>
           <li>
-            <span>
-              <strong>（見本陳列のテイクアウト販売をする場合）申請・食品表示に対応できる</strong>
-              <img src="img/takeout.png" alt="テイクアウト用の紙袋のイラスト" loading="lazy"
-                style="width:35%; height:auto; border-radius:var(--radius-md); border:1px solid var(--c-border); margin:12px 0 8px; display:block;">
-              <span class="note"><span style="color:var(--c-accent);">通常の飲食店営業の範囲内のため届出は不要です。</span><br>
-                但し、<mark>店先に見本を陳列してテイクアウト販売をする場合は、臨時出店申請・食品表示が必須です。</mark></span>
+            <span><strong>当日の安全・衛生に関する出店要件を守れる</strong>
+              <span class="note">出店許可後、以下の要件の遵守が必要です（詳細は要項をご確認ください）。</span>
+              <span class="note" style="margin-top:8px;">・<mark>火気（炭・ガス等）を使用する場合は、すぐ手の届く位置に消火器（粉末10型）を常備</mark>し、使用期限内・点検済みのものを設置する。ガスボンベは転倒防止措置とゴムホースバンドの取り付けを行う。</span>
+              <span class="note">・机・イス・のぼり等を公道に少しでもはみ出させない。テント・パラソルは強風で転倒・飛散しないよう固定する。</span>
+              <span class="note">・出店場所にゴミ箱を設置して自社で管理し、回収したゴミは契約先のごみ回収事業者に排出する。</span>
+              <span class="note">・出店許可証に記載の店舗責任者が、出店場所に常駐する。</span>
             </span>
           </li>
           <li>
-            <span><strong>八王子商工会議所の会員事業所である（または入会手続きに同意できる）</strong>
-              <span class="note">非会員の方は、出店の申請が許可された後にご入会のお手続きをお願いします。</span></span>
+            <span><strong>臨時出店営業日までに、八王子商工会議所の会員事業所である（または入会手続きに同意できる）</strong>
+              <span class="note">非会員の方は、出店の申請が許可された後、臨時出店営業日までにご入会のお手続きをお願いします。<br>入会について詳しくは<a href="https://hachioji.or.jp/about/join" target="_blank" rel="noopener" style="color:var(--c-accent); text-decoration:underline;">八王子商工会議所の入会案内ページ</a>をご確認ください。</span></span>
           </li>
         </ul>
 
@@ -225,36 +243,19 @@
 
       <div class="container">
 
-        <!-- 申請≠許可 念押しボックス -->
-        <div class="warn-box" style="margin-bottom:32px; text-align:left;">
-          <div class="warn-box__icon">⚠️</div>
-          <div class="warn-box__content">
-            <p class="warn-box__title"
-              style="font-size:1.25rem; border-bottom:2px solid var(--c-warn-text); padding-bottom:8px; margin-bottom:10px;">
-              申請は「出店希望の受付」であり、<wbr>出店許可ではありません</p>
-            <div class="warn-box__body">
-              <p>ご申請いただいた後、実行委員会による審査を行います。<strong>審査結果によっては、出店をご遠慮いただく場合があります。</strong>あらかじめご了承の上、ご申請ください。</p>
-              <ul style="margin-top:8px;">
-                <li>審査結果は申請期限（7月17日）から1週間を目処に、メールにてご連絡します</li>
-                <li>審査基準・定員等の詳細は事務局までお問い合わせください</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         <!-- 事前準備書類リスト -->
         <div style="
           margin-bottom: 28px;
-          background: #fffde7;
-          border: 2px solid #f9a825;
-          border-left: 6px solid #e65100;
+          background: var(--c-green-pale);
+          border: 1px solid var(--c-border);
+          border-left: 6px solid var(--c-green-dark);
           border-radius: 10px;
           padding: 18px 20px;
           text-align: left;
         ">
           <p style="
             font-weight: var(--fw-bold);
-            color: #6d2700;
+            color: var(--c-green-xdark);
             font-size: 1rem;
             margin-bottom: 12px;
             display: flex;
@@ -265,35 +266,35 @@
             <!-- ① 身分証明書類 -->
             <li class="doc-list-item">
               <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">代表者の身分証明書類</strong>
+              <strong class="doc-list-title">代表者の身分証明書類（次のいずれか1点）</strong>
+              <ul style="list-style:none; padding:0; margin:2px 0 0;">
+                <li style="font-weight:var(--fw-bold);">・運転免許証</li>
+                <li style="font-weight:var(--fw-bold);">・運転経歴証明書</li>
+                <li style="font-weight:var(--fw-bold);">・マイナンバーカード</li>
+              </ul>
               <span
-                class="doc-list-note">運転免許証・運転経歴証明書・マイナンバーカードのいずれか1点。原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong
+                class="doc-list-note">原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong
                   style="color:var(--c-red);">マイナンバーカードの裏面は提出しないでください。</strong></span>
             </li>
             <!-- ② 顔写真 -->
             <li class="doc-list-item">
               <span class="doc-list-badge">写真</span>
               <strong class="doc-list-title">現場責任者の顔写真</strong>
-              <span class="doc-list-note">当日の身分確認・スタッフ証明に使用します。正面・無帽・背景無地を推奨します。</span>
+              <span class="doc-list-note">当日の身分確認・スタッフ証明に使用します。<strong style="color:var(--c-red);">正面・無帽・背景無地とします。</strong></span>
             </li>
             <!-- ③ ゴミ請求書 -->
             <li class="doc-list-item">
               <span class="doc-list-badge">写真またはPDF</span>
               <strong class="doc-list-title">直近の事業系ゴミの請求書または領収書</strong>
-              <span class="doc-list-note">商工会議所地区内で事業を営んでいることの確認のために必要です。</span>
             </li>
-            <!-- ④ 利用許可書（条件付き） -->
+            <!-- ④ 営業許可書（飲食出店の場合のみ） -->
             <li class="doc-list-item">
               <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">【民地を借りる場合のみ】利用許可書</strong>
-              <span class="doc-list-note">ビル・マンション・駐車場・公開空地など他者所有地を使用する場合に必要です。消防法に抵触しない場合に限ります。</span>
-              <a href="docs/riyoukyoka.pdf" target="_blank" rel="noopener"
-                style="display:inline-block; margin-top:4px; font-size:.8rem; font-weight:600; color:#795548; text-decoration:underline;">テンプレートをダウンロード</a>
-            </li>
-            <!-- ⑤ 営業許可書（飲食出店の場合のみ） -->
-            <li class="doc-list-item">
-              <span class="doc-list-badge">写真またはPDF</span>
-              <strong class="doc-list-title">【飲食出店の場合のみ】営業許可書（食品営業許可証）のコピー</strong>
+              <strong class="doc-list-title"><mark>【飲食出店の場合のみ】</mark>次のいずれか1点</strong>
+              <ul style="list-style:none; padding:0; margin:2px 0 0;">
+                <li style="font-weight:var(--fw-bold);">・飲食店営業許可証</li>
+                <li style="font-weight:var(--fw-bold);">・食品衛生責任者（食品衛生管理者）</li>
+              </ul>
               <span class="doc-list-note">飲食物を提供・販売する出店の場合に必要です。</span>
             </li>
           </ul>
@@ -314,11 +315,11 @@
         <div class="warn-box" style="margin-top:20px; margin-bottom:8px; text-align:left;">
           <div class="warn-box__icon">📬</div>
           <div class="warn-box__content">
-            <p class="warn-box__title" style="font-size:1rem;">フォーム送信後、書類のアップロードも忘れずに行ってください</p>
+            <p class="warn-box__title" style="font-size:1rem;">フォーム送信後、書類のアップロードも忘れずに</p>
             <div class="warn-box__body">
-              <p>送信完了後に届く受付確認メールに、書類アップロード用リンクが記載されています。申請締切日（7月17日）までにアップロードが完了しない場合、申請を無効とさせていただく場合があります。</p>
+              <p>送信後に届く受付確認メールのリンクから、<strong>7月24日（金）正午12:00まで</strong>にアップロードしてください。</p>
             </div>
-            <a class="cta-btn cta-btn--sub" href="shopentry2026_upload.html">
+            <a class="cta-btn cta-btn--sub" href="shopentry2026_upload.html" target="_blank" rel="noopener">
               <span>📁 書類をアップロード前にこちらをお読みください</span>
             </a>
 
@@ -344,15 +345,15 @@
       ">
         <p><strong style="color:var(--c-text);">八王子商工会議所</strong>（八王子まつり担当：宇津木・北島）</p>
         <p>🏢 所在地：〒192-0062 八王子市大横町11-1</p>
-        <p>📞 電話：<a href="tel:0426236311" style="color:var(--c-accent);">042-623-6311</a>（受付 平日 9:00〜17:00）</p>
+        <p>📞 電話：<a href="tel:0426236311" style="color:var(--c-green-dark);">042-623-6311</a>（受付 平日 9:00〜17:00）</p>
       </div>
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
-    <p>© 2026 八王子まつり実行委員会　All Rights Reserved.</p>
-    <p style="margin-top:6px; color:rgba(255,255,255,.45); font-size:.85rem;">プライバシーポリシーは八王子商工会議所の窓口にてご確認いただけます</p>
+    <p>© 2026 八王子商工会議所　All Rights Reserved.</p>
+    <p style="margin-top:6px; color:rgba(255,255,255,.92); font-size:.85rem;">プライバシーポリシーは<a href="https://hachioji.or.jp/privacy-policy" target="_blank" rel="noopener">八王子商工会議所ウェブサイト</a>にてご確認いただけます</p>
   </footer>
 
 </body>
