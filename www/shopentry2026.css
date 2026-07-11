@@ -8,13 +8,13 @@
   --c-green-pale:#eaf6ec;
   --c-accent:    #40916c;
   --c-text:      #1b3a2d;
-  --c-muted:     #5a7a68;
+  --c-muted:     #446253; /* WCAG AA(4.5:1)確保のため #5a7a68 から変更 */
   --c-border:    #b7dfc7;
   --c-warn-bg:   #fdf6f5;
   --c-warn-bdr:  #e8b4ac;
   --c-warn-text: #7a2e22;
   --c-green-xdark: #1a4731;
-  --c-red:       #c0392b;
+  --c-red:       #a93226; /* WCAG AA(4.5:1)確保のため #c0392b から変更 */
 
   --ff-body:  'Noto Sans JP', 'BIZ UDPGothic', sans-serif;
   --fw-normal: 600;
@@ -671,7 +671,7 @@ mark { background-color: #ffe066; padding: 0 2px; }
   border-radius: 4px;
   padding: 8px 10px;
   font-size: .8rem;
-  color: #999;
+  color: #767676;
   background: #fff;
 }
 .mock-field__input--active {
@@ -776,8 +776,7 @@ li .doc-cards {
   gap: 12px;
   margin-top: 8px;
   margin-bottom: 4px;
-}
-.doc-card {
+}.doc-card {
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius-md);
@@ -864,13 +863,13 @@ details[open].faq-item summary::after { content: '－'; }
 /* ===== Footer ===== */
 .footer {
   background: var(--c-green-dark);
-  color: rgba(255,255,255,.65);
+  color: rgba(255,255,255,.92);
   text-align: center;
   font-size: 1rem;
   padding: 28px 20px;
   letter-spacing: .06em;
 }
-.footer a { color: rgba(255,255,255,.75); text-decoration: underline; }
+.footer a { color: #ffffff; text-decoration: underline; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {

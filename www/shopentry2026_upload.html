@@ -66,66 +66,14 @@
           <!-- ① 身分証明書類 -->
           <li class="doc-list-item">
             <span class="doc-list-badge">写真またはPDF</span>
-            <strong class="doc-list-title">代表者の身分証明書類（いずれか1点）</strong>
-            <div class="doc-cards" style="margin-top:10px; margin-bottom:2px;">
-              <div class="doc-card">
-                <div class="doc-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48"
-                    aria-hidden="true">
-                    <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788"
-                      stroke-width="1.5" />
-                    <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35" />
-                    <circle cx="32" cy="30" r="10" fill="none" stroke="#2d6a4f" stroke-width="2" />
-                    <circle cx="32" cy="30" r="3" fill="#2d6a4f" />
-                    <line x1="32" y1="20" x2="32" y2="27" stroke="#2d6a4f" stroke-width="2" />
-                    <line x1="32" y1="33" x2="32" y2="40" stroke="#2d6a4f" stroke-width="2" />
-                    <line x1="22" y1="30" x2="29" y2="30" stroke="#2d6a4f" stroke-width="2" />
-                    <line x1="35" y1="30" x2="42" y2="30" stroke="#2d6a4f" stroke-width="2" />
-                  </svg>
-                </div>
-                <p class="doc-card__name">運転免許証</p>
-                <p class="doc-card__note">住所変更時は裏面も</p>
-              </div>
-              <div class="doc-card">
-                <div class="doc-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48"
-                    aria-hidden="true">
-                    <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788"
-                      stroke-width="1.5" />
-                    <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35" />
-                    <path d="M32 18 L42 22 L42 30 Q42 38 32 42 Q22 38 22 30 L22 22 Z" fill="#40916c" opacity=".2"
-                      stroke="#2d6a4f" stroke-width="1.5" />
-                    <polyline points="26,30 30,35 38,24" fill="none" stroke="#2d6a4f" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </div>
-                <p class="doc-card__name">運転経歴証明書</p>
-                <p class="doc-card__note">住所変更時は裏面も</p>
-              </div>
-              <div class="doc-card">
-                <div class="doc-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48"
-                    aria-hidden="true">
-                    <rect x="2" y="4" width="60" height="40" rx="5" ry="5" fill="#eaf6ec" stroke="#52b788"
-                      stroke-width="1.5" />
-                    <rect x="2" y="10" width="60" height="7" fill="#52b788" opacity=".35" />
-                    <circle cx="20" cy="26" r="5" fill="#2d6a4f" opacity=".5" />
-                    <path d="M12 42 Q12 34 20 34 Q28 34 28 42" fill="#2d6a4f" opacity=".5" />
-                    <rect x="33" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6" />
-                    <rect x="41" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6" />
-                    <rect x="49" y="22" width="6" height="4" rx="1" fill="#52b788" opacity=".6" />
-                    <rect x="33" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4" />
-                    <rect x="41" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4" />
-                    <rect x="49" y="28" width="6" height="4" rx="1" fill="#52b788" opacity=".4" />
-                    <rect x="33" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3" />
-                    <rect x="41" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3" />
-                    <rect x="49" y="34" width="6" height="4" rx="1" fill="#52b788" opacity=".3" />
-                  </svg>
-                </div>
-                <p class="doc-card__name">マイナンバーカード</p>
-                <p class="doc-card__note" style="font-weight:var(--fw-bold); color:var(--c-red);">裏面は提出不要</p>
-              </div>
-            </div>
+            <strong class="doc-list-title">代表者の身分証明書類（次のいずれか1点）</strong>
+            <ul style="list-style:none; padding:0; margin:2px 0 0;">
+              <li style="font-weight:var(--fw-bold);">・運転免許証</li>
+              <li style="font-weight:var(--fw-bold);">・運転経歴証明書</li>
+              <li style="font-weight:var(--fw-bold);">・マイナンバーカード</li>
+            </ul>
+            <span class="doc-list-note">原則、表面のみ。住所変更がある場合は運転免許証・運転経歴証明書の裏面も添付してください。<strong
+                style="color:var(--c-red);">マイナンバーカードの裏面は提出しないでください。</strong></span>
           </li>
           <!-- ② 顔写真 -->
           <li class="doc-list-item">
@@ -141,7 +89,11 @@
           <!-- ④ 営業許可書（飲食出店の場合のみ） -->
           <li class="doc-list-item">
             <span class="doc-list-badge">写真またはPDF</span>
-            <strong class="doc-list-title">【飲食出店の場合のみ】飲食店営業許可証または食品衛生責任者（食品衛生管理者）</strong>
+            <strong class="doc-list-title"><mark>【飲食出店の場合のみ】</mark>次のいずれか1点</strong>
+            <ul style="list-style:none; padding:0; margin:2px 0 0;">
+              <li style="font-weight:var(--fw-bold);">・飲食店営業許可証</li>
+              <li style="font-weight:var(--fw-bold);">・食品衛生責任者（食品衛生管理者）</li>
+            </ul>
             <span class="doc-list-note">飲食物を提供・販売する出店の場合に必要です。</span>
           </li>
         </ul>
@@ -256,7 +208,7 @@
       ">
         <p><strong style="color:var(--c-text);">八王子商工会議所</strong>（八王子まつり担当：宇津木・北島）</p>
         <p>🏢 所在地：〒192-0062 八王子市大横町11-1</p>
-        <p>📞 電話：<a href="tel:0426236311" style="color:var(--c-accent);">042-623-6311</a>（受付 平日 9:00〜17:00）</p>
+        <p>📞 電話：<a href="tel:0426236311" style="color:var(--c-green-dark);">042-623-6311</a>（受付 平日 9:00〜17:00）</p>
       </div>
     </div>
   </section>
@@ -264,7 +216,7 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <p>© 2026 八王子商工会議所　All Rights Reserved.</p>
-    <p style="margin-top:6px; color:rgba(255,255,255,.45); font-size:.85rem;">プライバシーポリシーは<a href="https://hachioji.or.jp/privacy-policy" target="_blank" rel="noopener">八王子商工会議所HP</a>にてご確認いただけます</p>
+    <p style="margin-top:6px; color:rgba(255,255,255,.92); font-size:.85rem;">プライバシーポリシーは<a href="https://hachioji.or.jp/privacy-policy" target="_blank" rel="noopener">八王子商工会議所ウェブサイト</a>にてご確認いただけます</p>
   </footer>
 
 </body>
