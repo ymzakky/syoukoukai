@@ -305,30 +305,38 @@ mark { background-color: #ffe066; padding: 0 2px; }
 
 /* ===== Doc Download Links ===== */
 .doc-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
   margin-top: 12px;
 }
 .doc-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: var(--c-surface);
-  border: 1.5px solid var(--c-border);
+  width: 100%;
+  min-height: 52px;
+  box-sizing: border-box;
+  text-align: center;
+  background: var(--c-accent);
+  border: 2px solid var(--c-accent);
   border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 1rem;
+  padding: 11px 22px;
+  font-size: 1.05rem;
   font-weight: var(--fw-bold);
-  color: var(--c-green-dark);
+  color: #ffffff;
   text-decoration: none;
-  transition: background .15s, border-color .15s;
+  box-shadow: 0 3px 8px rgba(45, 106, 79, .28);
+  transition: background .15s, border-color .15s, box-shadow .15s, transform .1s;
 }
 .doc-link:hover {
-  background: var(--c-green-pale);
-  border-color: var(--c-accent);
+  background: var(--c-green-dark);
+  border-color: var(--c-green-dark);
+  box-shadow: 0 5px 14px rgba(45, 106, 79, .38);
+  transform: translateY(-1px);
 }
-.doc-link__icon { font-size: 1rem; }
+.doc-link__icon { font-size: 1.15rem; }
 
 /* ===== Checklist ===== */
 .checklist {
@@ -431,12 +439,23 @@ mark { background-color: #ffe066; padding: 0 2px; }
 }
 
 /* チェックリスト内のイラスト（BeerBBQ / takeout 等） */
+.checklist__img-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 12px 0 4px;
+}
 .checklist__img {
   width: 35%;
 }
 @media (max-width: 560px) {
+  .checklist__img-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
   .checklist__img {
-    width: 60%;
+    width: 100%;
     max-width: 280px;
   }
 }
