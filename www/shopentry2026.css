@@ -15,6 +15,7 @@
   --c-warn-text: #7a2e22;
   --c-green-xdark: #1a4731;
   --c-red:       #a93226; /* WCAG AA(4.5:1)確保のため #c0392b から変更 */
+  --c-slate:     #2c3e50;
 
   --ff-body:  'Noto Sans JP', 'BIZ UDPGothic', sans-serif;
   --fw-normal: 600;
@@ -305,30 +306,38 @@ mark { background-color: #ffe066; padding: 0 2px; }
 
 /* ===== Doc Download Links ===== */
 .doc-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
   margin-top: 12px;
 }
 .doc-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: var(--c-surface);
-  border: 1.5px solid var(--c-border);
+  width: 100%;
+  min-height: 52px;
+  box-sizing: border-box;
+  text-align: center;
+  background: var(--c-accent);
+  border: 2px solid var(--c-accent);
   border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 1rem;
+  padding: 11px 22px;
+  font-size: 1.05rem;
   font-weight: var(--fw-bold);
-  color: var(--c-green-dark);
+  color: #ffffff;
   text-decoration: none;
-  transition: background .15s, border-color .15s;
+  box-shadow: 0 3px 8px rgba(45, 106, 79, .28);
+  transition: background .15s, border-color .15s, box-shadow .15s, transform .1s;
 }
 .doc-link:hover {
-  background: var(--c-green-pale);
-  border-color: var(--c-accent);
+  background: var(--c-green-dark);
+  border-color: var(--c-green-dark);
+  box-shadow: 0 5px 14px rgba(45, 106, 79, .38);
+  transform: translateY(-1px);
 }
-.doc-link__icon { font-size: 1rem; }
+.doc-link__icon { font-size: 1.15rem; }
 
 /* ===== Checklist ===== */
 .checklist {
@@ -431,12 +440,23 @@ mark { background-color: #ffe066; padding: 0 2px; }
 }
 
 /* チェックリスト内のイラスト（BeerBBQ / takeout 等） */
+.checklist__img-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 12px 0 4px;
+}
 .checklist__img {
   width: 35%;
 }
 @media (max-width: 560px) {
+  .checklist__img-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
   .checklist__img {
-    width: 60%;
+    width: 100%;
     max-width: 280px;
   }
 }
@@ -548,10 +568,10 @@ mark { background-color: #ffe066; padding: 0 2px; }
   margin: 12px 0 20px;
   counter-reset: upload-step;
 }
-.upload-steps li {
+.upload-steps > li {
   counter-increment: upload-step;
   display: grid;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 36px minmax(0, 1fr);
   gap: 0 12px;
   align-items: start;
   padding: 10px 0;
@@ -560,8 +580,8 @@ mark { background-color: #ffe066; padding: 0 2px; }
   color: var(--c-text);
   line-height: 1.7;
 }
-.upload-steps li:last-child { border-bottom: none; }
-.upload-steps li::before {
+.upload-steps > li:last-child { border-bottom: none; }
+.upload-steps > li::before {
   content: counter(upload-step);
   width: 24px;
   height: 24px;
@@ -583,6 +603,15 @@ mark { background-color: #ffe066; padding: 0 2px; }
   max-width: 420px;
   pointer-events: none;
   user-select: none;
+}
+/* upload-steps の li（グリッド）内に配置された場合の幅調整 */
+.upload-steps__content {
+  min-width: 0;
+}
+.upload-steps__content .mock-frame {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 .mock-screen {
   background: #ffffff;
@@ -744,26 +773,46 @@ mark { background-color: #ffe066; padding: 0 2px; }
 
 /* 個人情報利用目的ノート */
 .privacy-note {
-  margin-top: 16px;
-  background: var(--c-green-pale);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  margin-top: 20px;
+  background: var(--c-surface);
+  border: 2px solid var(--c-slate);
+  border-radius: var(--radius-md);
+  padding: 0 0 16px;
   font-size: .95rem;
   line-height: 1.75;
   color: var(--c-muted);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(44, 62, 80, .12);
 }
 .privacy-note__title {
-  display: block;
-  color: var(--c-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--c-slate);
+  color: #fff;
   font-weight: var(--fw-bold);
-  margin-bottom: 6px;
+  font-size: 1.08rem;
+  margin: 0 0 14px;
+  padding: 12px 18px;
+}
+.privacy-note__icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.privacy-note > :not(.privacy-note__title) {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.privacy-note p {
+  margin: 0 0 10px;
 }
 .privacy-note ul {
-  padding-left: 18px;
-  margin-top: 6px;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
-.privacy-note ul li { margin-bottom: 4px; }
+.privacy-note ul li { margin-bottom: 14px; line-height: 1.5; }
+.privacy-note ul li:last-child { margin-bottom: 0; }
 
 /* ===== Doc Cards ===== */
 /* 書類リスト内でgrid列をまたいで全幅表示 */
