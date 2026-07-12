@@ -49,7 +49,7 @@
             <p class="upload-step__sub-title">メールが届いていない方は：</p>
             <ol>
               <li><strong>迷惑メールフォルダ</strong>もご確認ください（自動振り分けされている場合があります）</li>
-              <li>それでも見つからない場合は、<strong>八王子商工会議所（042-623-6311）へお電話</strong>でお問い合わせください</li>
+              <li>それでも見つからない場合は、<strong><a href="https://www.dropbox.com/request/dh304xmodhq3wpy989r2" target="_blank" rel="noopener">こちらのリンク</a></strong>からアップロードしてください</li>
             </ol>
           </div>
         </div>
@@ -110,82 +110,93 @@
         <div class="upload-step__body">
           <ol class="upload-steps">
             <li>受付確認メールに記載のリンクをクリックして開く</li>
-            <li>必要書類すべての画像または PDF を選択してアップロード</li>
-            <li>名前・メールアドレスの入力欄が表示された場合は、下の説明を参照して入力する</li>
-            <li>「アップロード」ボタンを押して完了を確認する</li>
+            <li>
+              <div class="upload-steps__content">
+              必要書類すべての画像または PDF を選択してアップロード
+
+              <!-- モックアップA：ファイル追加画面 -->
+              <figure class="mock-frame" aria-hidden="true">
+                <div class="mock-screen">
+                  <p class="mock-screen__title">八王子商工会議所 さんからのリクエストです</p>
+                  <p class="mock-screen__subtitle">出店申請書類</p>
+                  <div class="mock-dropzone">
+                    <div class="mock-btn">ファイルを追加</div>
+                    <p class="mock-dropzone__hint">またはこちらにドラッグ</p>
+                  </div>
+                  <div class="mock-footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="#0061FF"
+                      style="display:inline-block; vertical-align:middle;">
+                      <path
+                        d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z" />
+                    </svg>
+                    <p class="mock-footer__text">
+                      ファイルは 八王子商工会議所 さんの Dropbox に安全にアップロードされます。<span style="color:#0061ff;">ファイル リクエスト</span>と Dropbox の<span style="color:#0061ff;">プライバシー ポリシー</span>についての詳細をご覧ください。
+                    </p>
+                  </div>
+                </div>
+                <figcaption class="mock-caption">実際のアップロード画面イメージ（クリックできません）</figcaption>
+              </figure>
+              </div>
+            </li>
+            <li>
+              <div class="upload-steps__content">
+              名前・メールアドレスの入力欄が表示された場合は、下の説明を参照して入力する
+
+              <!-- モックアップB：名前・メールアドレス入力画面（遷移後） -->
+              <figure class="mock-frame" aria-hidden="true">
+                <div class="mock-screen mock-screen--form">
+                  <div class="mock-field-row">
+                    <div class="mock-field">
+                      <div class="mock-field__label">名前</div>
+                      <div class="mock-field__input mock-field__input--active">事業所名を入力</div>
+                    </div>
+                    <div class="mock-field">
+                      <div class="mock-field__label">メール アドレス</div>
+                      <div class="mock-field__input">受付確認メールの送信先</div>
+                    </div>
+                  </div>
+                  <div class="mock-submit-row">
+                    <div class="mock-btn">アップロード</div>
+                  </div>
+                </div>
+                <figcaption class="mock-caption">実際のアップロード画面イメージ（クリックできません）</figcaption>
+              </figure>
+
+              <div class="callout-info">
+                <strong>名前・メールアドレスの入力欄が表示された場合：</strong><br>
+                【名前】欄には<strong>事業所名</strong>を、【メールアドレス】欄には<strong>受付確認メールの送信先アドレス</strong>を入力してください。
+                <p class="callout-info__note">※ 普段からDropboxをご利用の方は、この入力欄が表示されない場合があります。</p>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div class="upload-steps__content">
+              「アップロード」ボタンを押して完了を確認する
+
+              <div class="upload-complete-note">
+                <p class="upload-complete-note__title">アップロード完了後</p>
+                <p>アップロードが完了すると、<strong>Dropboxから完了通知メール</strong>が届きます。メールが届いたことを確認して、書類提出は完了です。</p>
+                <p>事務局で内容を確認します。以下の場合はご連絡することがあります。</p>
+                <ul>
+                  <li>書類に不足がある場合</li>
+                  <li>画像・PDFが不鮮明で内容が確認できない場合</li>
+                  <li>書類の名義が申請者と異なる場合</li>
+                </ul>
+              </div>
+              </div>
+            </li>
           </ol>
-
-          <!-- モックアップA：ファイル追加画面 -->
-          <figure class="mock-frame" aria-hidden="true">
-            <div class="mock-screen">
-              <p class="mock-screen__title">八王子商工会議所 さんからのリクエストです</p>
-              <p class="mock-screen__subtitle">出店申請書類</p>
-              <div class="mock-dropzone">
-                <div class="mock-btn">ファイルを追加</div>
-                <p class="mock-dropzone__hint">またはこちらにドラッグ</p>
-              </div>
-              <div class="mock-footer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="#0061FF"
-                  style="display:inline-block; vertical-align:middle;">
-                  <path
-                    d="M8 2L0 7.5 8 13l8-5.5zM24 2l-8 5.5 8 5.5 8-5.5zM0 18.5L8 24l8-5.5-8-5.5zM24 13l-8 5.5 8 5.5 8-5.5zM8 25.5l8 5.5 8-5.5-8-5.5z" />
-                </svg>
-                <p class="mock-footer__text">
-                  ファイルは 八王子商工会議所 さんの Dropbox に安全にアップロードされます。<span style="color:#0061ff;">ファイル リクエスト</span>と Dropbox の<span style="color:#0061ff;">プライバシー ポリシー</span>についての詳細をご覧ください。
-                </p>
-              </div>
-            </div>
-            <figcaption class="mock-caption">実際のアップロード画面イメージ（クリックできません）</figcaption>
-          </figure>
-
-          <!-- モックアップB：名前・メールアドレス入力画面（遷移後） -->
-          <p class="mock-transition-label">▼ 名前・メールアドレスの入力欄が表示された場合（次の画面）</p>
-          <figure class="mock-frame" aria-hidden="true">
-            <div class="mock-screen mock-screen--form">
-              <div class="mock-field-row">
-                <div class="mock-field">
-                  <div class="mock-field__label">名前</div>
-                  <div class="mock-field__input mock-field__input--active">事業所名を入力</div>
-                </div>
-                <div class="mock-field">
-                  <div class="mock-field__label">メール アドレス</div>
-                  <div class="mock-field__input">受付確認メールの送信先</div>
-                </div>
-              </div>
-              <div class="mock-submit-row">
-                <div class="mock-btn">アップロード</div>
-              </div>
-            </div>
-            <figcaption class="mock-caption">実際のアップロード画面イメージ（クリックできません）</figcaption>
-          </figure>
-
-          <div class="callout-info">
-            <strong>名前・メールアドレスの入力欄が表示された場合：</strong><br>
-            【名前】欄には<strong>事業所名</strong>を、【メールアドレス】欄には<strong>受付確認メールの送信先アドレス</strong>を入力してください。
-            <p class="callout-info__note">※ 普段からDropboxをご利用の方は、この入力欄が表示されない場合があります。</p>
-          </div>
-
-          <div class="upload-complete-note">
-            <p class="upload-complete-note__title">アップロード完了後</p>
-            <p>アップロードが完了すると、<strong>Dropboxから完了通知メール</strong>が届きます。メールが届いたことを確認して、書類提出は完了です。</p>
-            <p>事務局で内容を確認します。以下の場合はご連絡することがあります。</p>
-            <ul>
-              <li>書類に不足がある場合</li>
-              <li>画像・PDFが不鮮明で内容が確認できない場合</li>
-              <li>書類の名義が申請者と異なる場合</li>
-            </ul>
-          </div>
         </div>
       </div><!-- /.upload-step -->
 
       <div class="privacy-note">
-        <strong class="privacy-note__title">個人情報の利用目的について</strong>
-        ご提出いただいた申請情報および身分証明書は、出店審査のほか、以下の目的で関係各所へ共有・提出する場合があります。目的外の利用は行いません。なお、<strong>代表者および現場責任者の個人情報</strong>は、暴力団排除（反社会的勢力の確認）のためにも取得・利用します。また、審査にあたり<strong>出店場所（住所・区画）の情報</strong>も取得します。
+        <strong class="privacy-note__title"><span class="privacy-note__icon" aria-hidden="true">🔒</span>個人情報の利用目的について</strong>
+        <p>ご提出いただいた申請情報および身分証明書は、出店審査のほか、以下の目的で関係各所へ共有・提出する場合があります。目的外の利用は行いません。なお、<strong>代表者および現場責任者の個人情報</strong>は、暴力団排除（反社会的勢力の確認）のためにも取得・利用します。また、審査にあたり<strong>出店場所（住所・区画）の情報</strong>も取得します。</p>
         <ul>
-          <li>反社会的勢力の確認（暴力団排除）に係る警察への情報提供</li>
-          <li>保健所への臨時出店届（飲食出店の場合）</li>
-          <li>出店許可書の発行に係る手続き</li>
-          <li>祭り運営に必要なその他の関係機関への提出</li>
+          <li>・反社会的勢力の確認（暴力団排除）に係る警察への情報提供</li>
+          <li>・保健所への臨時出店届（飲食出店の場合）</li>
+          <li>・出店許可書の発行に係る手続き</li>
+          <li>・祭り運営に必要なその他の関係機関への提出</li>
         </ul>
       </div>
 
