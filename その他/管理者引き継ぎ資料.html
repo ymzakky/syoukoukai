@@ -1,0 +1,630 @@
+<title>八王子まつり出店受付サイト 管理引き継ぎ資料</title>
+<style>
+  :root {
+    --ink: #1b2420;
+    --muted: #55665c;
+    --faint: #8a988f;
+    --bg: #f7f8f5;
+    --surface: #ffffff;
+    --border: #dbe2dc;
+    --accent: #2d6a4f;
+    --accent-soft: #e8f2ec;
+    --warn-bg: #fff8e8;
+    --warn-border: #e8c766;
+    --warn-text: #6d5300;
+    --code-bg: #eef1ed;
+    --owner-you: #2d6a4f;
+    --owner-you-bg: #e8f2ec;
+    --owner-shokou: #8a5a00;
+    --owner-shokou-bg: #fdf1de;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8ece8;
+      --muted: #a8b6ac;
+      --faint: #6d7b72;
+      --bg: #141815;
+      --surface: #1b201c;
+      --border: #2c342e;
+      --accent: #6bbf98;
+      --accent-soft: #1c2b23;
+      --warn-bg: #2a2410;
+      --warn-border: #6b5620;
+      --warn-text: #e8c766;
+      --code-bg: #20261f;
+      --owner-you: #6bbf98;
+      --owner-you-bg: #1c2b23;
+      --owner-shokou: #e0ac54;
+      --owner-shokou-bg: #2c2411;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8ece8;
+    --muted: #a8b6ac;
+    --faint: #6d7b72;
+    --bg: #141815;
+    --surface: #1b201c;
+    --border: #2c342e;
+    --accent: #6bbf98;
+    --accent-soft: #1c2b23;
+    --warn-bg: #2a2410;
+    --warn-border: #6b5620;
+    --warn-text: #e8c766;
+    --code-bg: #20261f;
+    --owner-you: #6bbf98;
+    --owner-you-bg: #1c2b23;
+    --owner-shokou: #e0ac54;
+    --owner-shokou-bg: #2c2411;
+  }
+  :root[data-theme="light"] {
+    --ink: #1b2420;
+    --muted: #55665c;
+    --faint: #8a988f;
+    --bg: #f7f8f5;
+    --surface: #ffffff;
+    --border: #dbe2dc;
+    --accent: #2d6a4f;
+    --accent-soft: #e8f2ec;
+    --warn-bg: #fff8e8;
+    --warn-border: #e8c766;
+    --warn-text: #6d5300;
+    --code-bg: #eef1ed;
+    --owner-you: #2d6a4f;
+    --owner-you-bg: #e8f2ec;
+    --owner-shokou: #8a5a00;
+    --owner-shokou-bg: #fdf1de;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Meiryo", sans-serif;
+    line-height: 1.75;
+    font-size: 15.5px;
+  }
+
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+  }
+
+  header.doc-head {
+    padding: 56px 20px 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  header.doc-head .inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+  }
+
+  .doc-head p.lead {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 0 20px;
+    max-width: 620px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    font-size: 0.85rem;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .meta-row strong { color: var(--muted); font-weight: 700; }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 56px 0 8px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  h2 + .section-note {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 12px 0 24px;
+    max-width: 640px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 28px 0 10px;
+  }
+
+  p { margin: 0 0 14px; }
+
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  code {
+    font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
+    font-size: 0.88em;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    word-break: break-all;
+  }
+
+  /* ---- service cards ---- */
+  .service {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+
+  .service__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .service__role {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .owner-tag {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 4px 11px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .owner-tag--you { color: var(--owner-you); background: var(--owner-you-bg); }
+  .owner-tag--shokou { color: var(--owner-shokou); background: var(--owner-shokou-bg); }
+
+  .service__body {
+    padding: 16px 20px 20px;
+  }
+
+  .kv {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 8px 16px;
+    font-size: 0.92rem;
+  }
+
+  .kv dt {
+    color: var(--faint);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding-top: 2px;
+  }
+
+  .kv dd {
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .kv dd + dt { margin-top: 6px; }
+
+  /* ---- todo checklist ---- */
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+
+  .checklist input[type="checkbox"] {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .checklist .task-title { font-weight: 700; }
+  .checklist .task-detail { color: var(--muted); font-size: 0.88rem; margin-top: 2px; }
+
+  /* ---- warn box ---- */
+  .warn {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-left: 4px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 0.92rem;
+    color: var(--warn-text);
+  }
+
+  .warn strong { color: var(--warn-text); }
+
+  /* ---- flow diagram ---- */
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    align-items: stretch;
+    margin: 20px 0 8px;
+  }
+
+  .flow__step {
+    flex: 1 1 150px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    position: relative;
+  }
+
+  .flow__step .who {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--faint);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .flow__step .what {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .flow__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    color: var(--faint);
+    font-size: 1.1rem;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .flow { flex-direction: column; }
+    .flow__arrow { transform: rotate(90deg); padding: 2px 0; }
+  }
+
+  /* ---- directory tree ---- */
+  .tree {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
+    font-size: 0.86rem;
+    line-height: 1.85;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .tree .dim { color: var(--faint); }
+  .tree .hl { color: var(--accent); font-weight: 700; }
+
+  /* ---- table ---- */
+  .tbl-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--faint);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .unresolved-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--warn-text);
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+  }
+
+  footer.doc-foot {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--faint);
+    font-size: 0.82rem;
+  }
+
+  @media print {
+    .checklist input[type="checkbox"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+
+<header class="doc-head">
+  <div class="inner">
+    <span class="eyebrow">管理・運用 引き継ぎ資料</span>
+    <h1>八王子まつり2026 出店受付サイト</h1>
+    <p class="lead">このサイトの運用に関わる管理者権限・外部サービス・操作方法を、八王子商工会議所の担当者へ引き継ぐための資料です。</p>
+    <div class="meta-row">
+      <span><strong>作成日</strong> 2026年7月13日</span>
+      <span><strong>作成者</strong> 山崎（yamazaki@musubi-kanaderu.net）</span>
+      <span><strong>対象</strong> 八王子商工会議所 出店受付担当者</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <h2><span class="num">01</span>全体構成</h2>
+  <p class="section-note">サイトは4つの外部サービスの組み合わせで動いています。独自サーバーやアプリケーションは存在せず、すべて静的なHTML/CSSと外部SaaSへのリンクで構成されています。</p>
+
+  <div class="flow">
+    <div class="flow__step">
+      <div class="who">開発・編集</div>
+      <div class="what">GitHub</div>
+    </div>
+    <div class="flow__arrow">→</div>
+    <div class="flow__step">
+      <div class="who">公開・配信</div>
+      <div class="what">Netlify</div>
+    </div>
+    <div class="flow__arrow">→</div>
+    <div class="flow__step">
+      <div class="who">来場者が入力</div>
+      <div class="what">FormMailer<br>（申請フォーム）</div>
+    </div>
+    <div class="flow__arrow">→</div>
+    <div class="flow__step">
+      <div class="who">来場者が提出</div>
+      <div class="what">Dropbox<br>（書類アップロード）</div>
+    </div>
+  </div>
+
+  <p style="margin-top:20px;">申請者はサイト上のボタンから <strong>FormMailer</strong> のフォームへ進んで出店申請を送信し、その後届く自動返信メールに記載された <strong>Dropbox</strong> のリンクから身分証明書等の書類をアップロードする、という2段階の流れです。サイト自体にはお問い合わせフォームや独自の送信処理はありません。</p>
+
+  <div class="warn">
+    <strong>権限の所在にご注意ください。</strong>GitHub・Netlifyは山崎個人のアカウントで運用しています。FormMailer・Dropboxは商工会議所名義のアカウントが既にありますが、日常の設定変更を山崎が代行してきた部分があります。詳細は各サービスの項目と「02 引き継ぎチェックリスト」をご確認ください。
+  </div>
+
+  <h2><span class="num">02</span>引き継ぎチェックリスト</h2>
+  <p class="section-note">担当者が変わる際に、実際に手を動かして確認・移管すべき項目です。</p>
+
+  <ul class="checklist">
+    <li>
+      <input type="checkbox" id="c1" />
+      <div>
+        <label for="c1" class="task-title">GitHubリポジトリへのアクセス権限を確認する</label>
+        <div class="task-detail">現在は山崎個人アカウントが所有者。商工会議所側の担当者をリポジトリの共同管理者（Collaborator）として招待するか、商工会議所名義のGitHubアカウントへ移管するか方針を決める。</div>
+      </div>
+    </li>
+    <li>
+      <input type="checkbox" id="c2" />
+      <div>
+        <label for="c2" class="task-title">Netlifyアカウントの引き継ぎ方針を決める</label>
+        <div class="task-detail">現在は山崎個人のNetlifyアカウントで、管理画面から手動デプロイ（ドラッグ＆ドロップ、またはCLI）している。商工会議所側に権限を渡すか、商工会議所名義でNetlifyアカウントを新設するかを検討する。</div>
+      </div>
+    </li>
+    <li>
+      <input type="checkbox" id="c3" />
+      <div>
+        <label for="c3" class="task-title">FormMailer（商工会議所名義）の管理画面ログイン情報を担当者間で共有する</label>
+        <div class="task-detail">フォームID <code>e761a6be355570</code>。設定変更・回答確認ができるログイン情報の所在を確認し、担当者交代時も引き続きアクセスできるようにする。</div>
+      </div>
+    </li>
+    <li>
+      <input type="checkbox" id="c4" />
+      <div>
+        <label for="c4" class="task-title">Dropbox（商工会議所名義）ファイルリクエストの管理者を確認する</label>
+        <div class="task-detail">現在使用中のリクエストURL <code>https://www.dropbox.com/request/dh304xmodhq3wpy989r2</code> の作成・管理権限を持つアカウントを確認し、締切変更や新規リクエスト作成ができる担当者を明確にする。</div>
+      </div>
+    </li>
+    <li>
+      <input type="checkbox" id="c5" />
+      <div>
+        <label for="c5" class="task-title">来年度以降の年次更新箇所を把握する</label>
+        <div class="task-detail">「03 よくある操作」の年次更新セクションを参照。日付・PDF・フォームURLなど毎年差し替えが必要な箇所をまとめている。</div>
+      </div>
+    </li>
+  </ul>
+
+  <h2><span class="num">03</span>外部サービス一覧</h2>
+  <p class="section-note">アカウント名義（誰が管理しているか）を色タグで示しています。</p>
+
+  <div class="service">
+    <div class="service__head">
+      <div>
+        <div class="service__name">GitHub</div>
+        <div class="service__role">ソースコード管理・編集履歴</div>
+      </div>
+      <span class="owner-tag owner-tag--you">山崎 個人アカウント</span>
+    </div>
+    <div class="service__body">
+      <dl class="kv">
+        <dt>リポジトリ</dt>
+        <dd><code>github.com/ymzakky/syoukoukai</code></dd>
+        <dt>用途</dt>
+        <dd>HTML/CSSファイルの変更履歴管理。<code>www/</code> フォルダのみをコミット対象とする運用ルール（<code>CLAUDE.md</code> に記載）。</dd>
+        <dt>編集方法</dt>
+        <dd>直接ファイルを編集する場合はGitの基本操作（clone/commit/push）が必要。日常的な文言修正程度であれば、GitHubのWeb画面上でも直接編集可能。</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="service">
+    <div class="service__head">
+      <div>
+        <div class="service__name">Netlify</div>
+        <div class="service__role">サイトの公開・ホスティング</div>
+      </div>
+      <span class="owner-tag owner-tag--you">山崎 個人アカウント</span>
+    </div>
+    <div class="service__body">
+      <dl class="kv">
+        <dt>デプロイ方法</dt>
+        <dd>GitHubとの自動連携はしておらず、管理画面への手動ドラッグ＆ドロップ、またはNetlify CLIで <code>www/</code> フォルダの中身を都度アップロードして公開している。</dd>
+        <dt>公開URL</dt>
+        <dd>未確認 <span class="unresolved-badge">要確認</span></dd>
+        <dt>注意</dt>
+        <dd>GitHub上でファイルを更新しても、Netlifyへ手動でアップロードし直さない限りサイトの表示は変わらない。</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="service">
+    <div class="service__head">
+      <div>
+        <div class="service__name">FormMailer</div>
+        <div class="service__role">出店申請フォーム本体</div>
+      </div>
+      <span class="owner-tag owner-tag--shokou">商工会議所 名義</span>
+    </div>
+    <div class="service__body">
+      <dl class="kv">
+        <dt>フォームURL</dt>
+        <dd><code>https://business.form-mailer.jp/fms/e761a6be355570</code></dd>
+        <dt>設置箇所</dt>
+        <dd><code>shopentry2026.html</code> 内「申請フォームへ進む」ボタンのリンク先</dd>
+        <dt>設定原稿</dt>
+        <dd>確認画面・完了画面・自動返信メールの文面は <code>その他/FormMailer設定文面.html</code>（Git管理外の社内資料）にコピペ用としてまとめてある。設定変更時はこのファイルを開き、「コピー」ボタンでFormMailer管理画面の各設定欄に貼り付ける。</dd>
+        <dt>要差し替え</dt>
+        <dd>設定文面中の <code>{{DROPBOX_UPLOAD_URL}}</code>・<code>{{UPLOAD_PAGE_URL}}</code> は年度ごとに実際の値へ置き換える必要あり。</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="service">
+    <div class="service__head">
+      <div>
+        <div class="service__name">Dropbox（ファイルリクエスト）</div>
+        <div class="service__role">身分証明書・許可証などの書類アップロード先</div>
+      </div>
+      <span class="owner-tag owner-tag--shokou">商工会議所 名義</span>
+    </div>
+    <div class="service__body">
+      <dl class="kv">
+        <dt>リクエストURL</dt>
+        <dd><code>https://www.dropbox.com/request/dh304xmodhq3wpy989r2</code></dd>
+        <dt>設置箇所</dt>
+        <dd><code>shopentry2026_upload.html</code>（案内ページ）、およびFormMailerの自動返信メール本文</dd>
+        <dt>申請者の操作</dt>
+        <dd>Dropboxアカウントなしで、リンクを開いてファイルを選択するだけでアップロードできる（名前・メールアドレスの入力を求められる場合あり）。</dd>
+        <dt>締切変更が必要な場合</dt>
+        <dd>Dropbox管理画面でファイルリクエストの受付終了日時を変更する。URLは年度ごとに変わる可能性があるため、変わった場合はサイト内2箇所とFormMailer設定文面の両方を更新すること。</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2><span class="num">04</span>サイトのファイル構成</h2>
+  <p class="section-note">実際に公開・編集対象となるのは <code>www/</code> フォルダの中身のみです。</p>
+
+  <div class="tree">www/
+├── <span class="hl">shopentry2026.html</span>         <span class="dim"># 出店申請ページ（トップ）</span>
+├── <span class="hl">shopentry2026_upload.html</span>  <span class="dim"># 書類アップロード案内ページ</span>
+├── <span class="hl">shopentry2026.css</span>          <span class="dim"># 上記2ページ共通のスタイル</span>
+├── img/                       <span class="dim"># チェックリスト等の案内画像</span>
+└── docs/                     <span class="dim"># 要項・案内PDF（annai2026.pdf 等）</span></div>
+
+  <p style="margin-top:14px;">プロジェクト直下にある「受領資料」フォルダ群や <code>その他/</code> フォルダは、商工会議所から受け取った資料やFormMailer設定原稿などの社内メモであり、Git管理外・非公開です。誤ってこれらをコミット・公開しないよう、<code>CLAUDE.md</code> に運用ルールが明記されています。</p>
+
+  <h2><span class="num">05</span>よくある操作</h2>
+
+  <h3>文言・日付を修正したい</h3>
+  <p><code>www/shopentry2026.html</code>（申請ページ）または <code>www/shopentry2026_upload.html</code>（アップロード案内ページ）を編集し、GitHubへコミット後、Netlifyへ手動で再アップロードして反映する。</p>
+
+  <h3>年度更新時に差し替えが必要な主な箇所</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>項目</th><th>場所</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>開催日・申請締切日</td><td><code>shopentry2026.html</code> 本文中の日付表記</td></tr>
+        <tr><td>案内PDF（要項・保健所資料等）</td><td><code>www/docs/</code> 内のファイルを差し替え</td></tr>
+        <tr><td>FormMailerフォームURL</td><td>新年度フォームを作成した場合、CTAボタンのリンク先を更新</td></tr>
+        <tr><td>Dropboxアップロード先URL</td><td><code>shopentry2026_upload.html</code> 内2箇所、およびFormMailer完了画面・自動返信メール文面</td></tr>
+        <tr><td>お問い合わせ担当者名</td><td>各ページ末尾「お問い合わせ」欄</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>フォームの確認画面・完了画面・自動返信メールの文面を直したい</h3>
+  <p><code>その他/FormMailer設定文面.html</code> をブラウザで開き、該当ブロックの「コピー」ボタンでコピーしてFormMailer管理画面の該当欄に貼り付ける。このファイルは公開サイトではなく社内用のコピペ原稿。</p>
+
+  <h3>サイトの見た目（色・レイアウト）を直したい</h3>
+  <p><code>www/shopentry2026.css</code> を編集する。2ページで共通のスタイルシート。</p>
+
+  <footer class="doc-foot">
+    八王子まつり2026 出店受付サイト運用資料　作成: 山崎（yamazaki@musubi-kanaderu.net）
+  </footer>
+
+</main>
