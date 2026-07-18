@@ -1,0 +1,7 @@
+# 実行に必要な依存
+pillow>=10.0
+openpyxl>=3.1
+rapidfuzz>=3.0
+
+# 開発・ビルド用（実行時には不要）
+#   pip install pyinstaller pytest
